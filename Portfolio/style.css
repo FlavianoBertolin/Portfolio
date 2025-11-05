@@ -10,9 +10,10 @@ body {
     display: flex;
     justify-content: center; /* centraliza horizontalmente */
     align-items: flex-start; /* alinha ao topo */
-    gap: 20px; /* espaçamento entre os elementos */
     padding: 40px;
 }
+
+
 
 /* blocos */
 nav {
@@ -78,8 +79,10 @@ nav button:not(:last-child)::after {
     background: linear-gradient(to left, #000000 -250%, transparent);
  /* cor da linha */
 }
+
 main {
     position: relative;
+    z-index: 3; /* fica acima da section */
     width: 570px;
     height: 750px;
     background-color: white;
@@ -92,20 +95,34 @@ main {
     justify-content: flex-end; /* empurra o conteúdo de baixo pra cima */
     text-align: center;
     padding-bottom: 20px;
+    margin-left: 20px;
 }
 
-/* Fundo verde atrás */
+/* Quadrado verde decorativo atrás do main */
 main::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: -80px;
-    width: 100%;
-    height: 100%;
-    background-color: #64B788;
-    border-radius: 8px;
-    z-index: -1; /* envia para trás do conteúdo */
+  content: "";
+  position: absolute;
+  top: 30px;          /* posição vertical ajustável */
+  left: -60px;        /* posição horizontal ajustável */
+  width: 100%;
+  height: 100%;
+  background-color: #64B788;
+  border-radius: 8px;
+  z-index: -1;        /* IMPORTANTE: atrás do conteúdo, mas ainda ligado ao main */
 }
+
+.decor {
+  position: absolute;
+  top: 20px;
+  left: 110px;
+  width: 5px;
+  height: 400px;
+  background-color: #64B788;
+  border-radius: 12px;
+  z-index: 1; /* atrás do main */
+}
+
+
 
 /* Imagem ocupa metade superior */
 .foto {
@@ -185,15 +202,32 @@ main h3 {
 
 section {
     width: 900px;
-    min-height: 400px;
+    height: 650px;
+    max-height: 740px;
     background-color: white;
     border-radius: 4px;
     margin-top: 20px;
     position: relative;
-    left: -40px;
-    z-index: -1;
+    z-index: 0;
     color: #333;
     padding: 40px;
+    overflow-y: auto;      /* barra de rolagem vertical */
+    overflow-x: hidden;    /* impede rolagem horizontal */
+    scroll-behavior: smooth; /* rolagem suave (opcional) */
+    
+}
+
+section::-webkit-scrollbar {
+  width: 8px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
 
 /* Grid principal */
@@ -208,27 +242,6 @@ section {
     position: relative;
 }
 
-/* Linha vertical entre .div2 e .div3 */
-.div2::after {
-    content: "";
-    position: absolute;
-    top: 0;             /* começa no topo da div2 */
-    right: 0;           /* encosta na borda direita da div2 */
-    width: 1px;         /* espessura da linha */
-    height: 100%;       /* altura total da div2 */
-    background-color: #333; /* cor da linha */
-}
-
-/* Linha horizontal abaixo da div4 (opcional) */
-.div4::after {
-    content: "";
-    position: absolute;
-    bottom: 0;          /* na base da div4 */
-    left: 0;
-    width: 100%;        /* linha completa */
-    height: 1px;
-    background-color: #333;
-}
 
 
 
@@ -333,10 +346,215 @@ section {
     margin-bottom: 10px;
 }
 
+
+/* Linha horizontal abaixo da div4 (opcional) */
+.div1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;          /* na base da div4 */
+    left: 0;
+    width: 100%;        /* linha completa */
+    height: 1px;
+    background-color: #333;
+}
+
+
+/* Linha vertical entre .div2 e .div3 */
+.div2::after {
+    content: "";
+    position: absolute;
+    top: 0;             /* começa no topo da div2 */
+    right: 0;           /* encosta na borda direita da div2 */
+    width: 1px;         /* espessura da linha */
+    height: 100%;       /* altura total da div2 */
+    background-color: #333; /* cor da linha */
+}
+
+/* Linha horizontal abaixo da div4 (opcional) */
+.div4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;          /* na base da div4 */
+    left: 0;
+    width: 100%;        /* linha completa */
+    height: 1px;
+    background-color: #333;
+}
+
         
 
+.parent1 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+/* Título ou bloco principal */
+.div6 {
+  grid-column: span 2;
+  grid-column: 1 / -1; /* ocupa todas as 6 colunas */
+  font-size: 17px; /* era font-weight, mas parece que você queria mudar o tamanho */
+  font-weight: 600;
+  position: relative;
+}
+
+.div6 span {
+  color: #64B788;
+}
+
+/* Grupos de conteúdo — simplificação */
+.div7,
+.div9,
+.div11,
+.div13 {
+  grid-column: 1 / 4; /* 3 colunas */
+  margin-top: 15px;
+  position: relative;
+}
+
+.div8,
+.div10,
+.div12,
+.div14 {
+  grid-column: 4 / 7; /* ocupa as colunas 4 e 5  */
+  margin-top: 15px;
+  position: relative;
+}
+
+
+.div7 {
+  display: flex;                /* coloca ícone e texto lado a lado */
+  align-items: center;          /* alinha verticalmente */
+  gap: 10px;                    /* espaçamento entre o ícone e o texto */
+}
+
+.div7 i {
+  font-size: 35px;              /* tamanho do ícone */
+  color: #64B788;               /* verde da tua paleta */
+}
+
+.div7 h3 {
+  font-size: 22px;
+  color: #333;
+  font-weight: 400;
+  margin: 0;                    /* remove margens padrão do h3 */
+}
+
+.div8 {
+  display: flex;                /* coloca ícone e texto lado a lado */
+  align-items: center;          /* alinha verticalmente */
+  gap: 10px;                    /* espaçamento entre o ícone e o texto */
+}
+
+.div8 i {
+  font-size: 35px;              /* tamanho do ícone */
+  color: #64B788;               /* verde da tua paleta */
+}
+
+.div8 h3 {
+  font-size: 22px;
+  color: #333;
+  font-weight: 400;
+  margin: 0;                    /* remove margens padrão do h3 */
+}
+
+
+#resumo .tempo {
+  display: inline-block;       /* permite aplicar padding e borda corretamente */
+  font-weight: 600;
+  color: #64B788;
+  background-color: #ffffff;
+  border: 2px solid #64B788;   /* cria a borda verde */
+  border-radius: 6px;          /* cantos arredondados */
+  padding: 4px 10px;           /* espaço interno */
+  margin: 8px 0;               /* espaço vertical entre elementos */
+  transition: all 0.3s ease;   /* animação suave pra hover */
+}
+
+#resumo .tempo:hover {
+  background-color: #64B788;
+  color: #ffffff;
+  cursor: none;
+}
+
+#resumo .cargo, .curso{
+  font-size: 22px;
+  font-weight: 500;
+  color: #333;
+  margin: 15px 0;
+}
 
 
 
+#resumo .empresa {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    margin: 4px 0;
+}
 
+#resumo .descricao {
+    font-size: 16px;
+    color: #555;
+    line-height: 2;
+    margin-top: 6px;
+}
 
+/* Linha horizontal abaixo do título principal (.div6) */
+
+.div6::after {
+  content: "";
+  position: absolute;
+  bottom: 0;           /* gruda na base da div6 */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #64B788; /* cor da tua paleta */
+  opacity: 0.4;
+  border-radius: 2px;
+}
+
+/* Linha vertical central dividindo colunas esquerda/direita */
+.parent1::before {
+  content: "";
+  position: absolute;
+  top: 80px; /* deixa espaço pro título */
+  left: 50%; /* divide ao meio */
+  transform: translateX(-50%);
+  width: 1px;
+  height: calc(100% - 100px); /* ajusta altura */
+  background-color: #333;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Linhas horizontais sob cada par de blocos (pares de div7+div8, div9+div10, etc.) */
+.div7::after,
+.div8::after,
+.div9::after,
+.div10::after,
+.div11::after,
+.div12::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  opacity: 0.1;
+}
+
+/* 🌿 Toque visual com tua paleta */
+.div6::after,
+.parent1::before,
+.div7::after,
+.div8::after,
+.div9::after,
+.div10::after,
+.div11::after,
+.div12::after {
+  background-color: #333; /* verde do layout */
+  opacity: 0.25; /* deixa suave */
+}
