@@ -1,0 +1,17 @@
+:root {
+    --cor-principal: #64B788;
+    --cor-principal-hover: #4b8f66; 
+    --cor-secundaria: #ffffff;
+    --cor-destaque: #00aaff;
+    --cor-fundo-body: #c4f5b1;
+    --cor-fundo-card: #ffffff;
+    --cor-fundo-foto: #000000;
+    --cor-texto: #333;
+    --cor-texto-hover: #555;
+    --cor-texto-h3: #666;
+    --cor-botao:#000000;
+    --cor-botao-hover:#3cff00;
+    --cor-scrollbar:#888;
+    --cor-scrollbar-hover:#555;
+    --cor-text-exp:#ffffff;
+}

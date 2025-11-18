@@ -1,0 +1,377 @@
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo-body);;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+/* container flex */
+.container {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: flex-start; /* alinha ao topo */
+    padding: 40px;
+}
+
+
+
+/* blocos */
+
+
+nav {
+    width: 72px;
+    height: 345px;
+    border-radius: 4px;
+    background-color: var(--cor-fundo-card);
+    margin-top: 60px;
+    position: relative;
+    left: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+    z-index: 5;
+}
+
+nav button {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* ícone em cima, texto embaixo */
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 69px;
+    border: none;
+    background-color: var(--cor-fundo-card);
+    cursor: pointer;
+    font-size: 10px;
+    color: var(--cor_botao);
+    gap: 4px; /* espaço entre ícone e texto */
+}
+
+nav button:hover {
+    background-color: var(--cor-botao-hover); /* cor de fundo ao passar o mouse */
+    transition: background-color 0.1s;
+}
+
+nav button i {
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+/* linha entre os botões (meia linha à direita) */
+nav button:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;       /* coloca a linha na base do botão */
+    right: 0;        /* encosta na direita */
+    width: 100%;      /* metade da largura */
+    height: 1px;     /* espessura da linha */
+    background: linear-gradient(to left, #000000 -250%, transparent);
+ /* cor da linha */
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-texto); /* sua cor preferida */
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a:hover {
+    color: var(--cor-texto-hover);
+    text-decoration: underline; /* opcional */
+}
+
+main {
+    position: relative;
+    z-index: 3; /* fica acima da section */
+    width: 570px;
+    height: 750px;
+    background-color: var(--cor-fundo-card);
+    border-radius: 8px;
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* empurra o conteúdo de baixo pra cima */
+    text-align: center;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+
+/* Imagem ocupa metade superior */
+.foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%; /* metade superior */
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 80%);
+    background-color: var(--cor-fundo-foto);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* imagem cobre a área sem distorcer */
+}
+
+/* Títulos */
+main h1 {
+    margin-top: 52%; /* abaixo da imagem */
+    font-size: 1.6em;
+    color: var(--cor-texto);
+}
+
+main h3 {
+    margin-top: 5px;
+    font-weight: normal;
+    color: var(--cor-texto-h3);
+}
+
+/* Ícones sociais */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--cor-principal);
+    transition: 0.3s;
+}
+
+.social button:hover {
+    transform: scale(1.2);
+    color: var(--cor-principal-hover);
+}
+
+/* Botões de ação (embaixo do card) */
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.acoes button {
+    background-color: var(--cor-principal);
+    border: none;
+    color: var(--cor-fundo-card);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.acoes button:hover {
+    background-color: var(--cor-principal-hover);
+}
+
+section {
+    width: 900px;
+    height: 650px;
+    max-height: 740px;
+    background-color: var(--cor-fundo-card);
+    border-radius: 4px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 0;
+    color: var(--cor-texto);
+    padding: 40px;
+    overflow-y: auto;      /* barra de rolagem vertical */
+    overflow-x: hidden;    /* impede rolagem horizontal */
+    scroll-behavior: smooth; /* rolagem suave (opcional) */
+    
+}
+
+
+
+
+section::-webkit-scrollbar {
+  width: 8px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background-color: var(--cor-scrollbar);
+  border-radius: 4px;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cor-scrollbar-hover);
+}
+
+
+
+
+/* Grid principal */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px; /* espaçamento entre blocos */
+}
+
+.parent > div {
+    position: relative;
+}
+
+
+
+
+
+
+/* Título principal */
+.div1 {
+    grid-column: 1 / 6; /* ocupa todas as 5 colunas */
+}
+
+
+
+.div1 span {
+    color: var(--cor-principal);
+}
+
+/* Sobre mim - texto */
+.div2 {
+    grid-column: 1 / 4; /* ocupa 2 colunas */
+    grid-row: 2;
+    
+}
+
+.div2 p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--cor-texto-h3)
+}
+
+/* Lista de informações */
+.div3 {
+    grid-column: 4 / 5; /* ocupa 3 colunas */
+    grid-row: 2;
+    margin-top: 15px;
+}
+
+.div3 .label {
+    font-size: 16px;
+    color: var(--cor-text-exp);
+    background-color: var(--cor-principal);
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.div3 .value {
+    font-size: 16px;
+    color: var(--cor-texto);
+    padding: 4px 8px;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 150%;
+    font-size: 14px;
+    color: var(--cor-texto);
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+}
+
+.label {
+    white-space: nowrap;
+}
+
+.value {
+    white-space: nowrap;
+    color: var(--cor-principal);
+    font-weight: bold;
+}
+
+/* Título serviços */
+.div4 {
+    grid-column: 1 / 6;
+    grid-row: 3;
+}
+
+.div4 span {
+    color: var(--cor-principal);
+}
+
+/* Bloco de serviços */
+.div5 {
+    grid-column: 1 / 6;
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* centraliza horizontalmente */
+}
+
+.div5 i {
+    font-size: 50px;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-principal);
+    border-radius: 50%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* Linha horizontal abaixo da div4 (opcional) */
+.div1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;          /* na base da div4 */
+    left: 0;
+    width: 100%;        /* linha completa */
+    height: 1px;
+    background-color: var(--cor-texto);
+}
+
+
+/* Linha vertical entre .div2 e .div3 */
+.div2::after {
+    content: "";
+    position: absolute;
+    top: 0;             /* começa no topo da div2 */
+    right: 0;           /* encosta na borda direita da div2 */
+    width: 1px;         /* espessura da linha */
+    height: 100%;       /* altura total da div2 */
+    background-color: var(--cor-texto); /* cor da linha */
+}
+
+/* Linha horizontal abaixo da div4 (opcional) */
+.div4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;          /* na base da div4 */
+    left: 0;
+    width: 100%;        /* linha completa */
+    height: 1px;
+    background-color: var(--cor-texto);
+}
+
+        
+

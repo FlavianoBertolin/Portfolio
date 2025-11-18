@@ -1,0 +1,846 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(175, 224, 188);
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+/* container flex */
+.container {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: flex-start; /* alinha ao topo */
+    padding: 40px;
+}
+
+
+
+/* blocos */
+
+
+nav {
+    width: 72px;
+    height: 345px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-top: 60px;
+    position: relative;
+    left: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+    z-index: 5;
+}
+
+nav button {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* ícone em cima, texto embaixo */
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 69px;
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 10px;
+    color: #000;
+    gap: 4px; /* espaço entre ícone e texto */
+}
+
+nav button i {
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+/* linha entre os botões (meia linha à direita) */
+nav button:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;       /* coloca a linha na base do botão */
+    right: 0;        /* encosta na direita */
+    width: 100%;      /* metade da largura */
+    height: 1px;     /* espessura da linha */
+    background: linear-gradient(to left, #000000 -250%, transparent);
+ /* cor da linha */
+}
+
+main {
+    position: relative;
+    z-index: 3; /* fica acima da section */
+    width: 570px;
+    height: 750px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* empurra o conteúdo de baixo pra cima */
+    text-align: center;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+
+/* Quadrado verde decorativo atrás do main */
+main::before {
+  content: "";
+  position: absolute;
+  top: 30px;          /* posição vertical ajustável */
+  left: -60px;        /* posição horizontal ajustável */
+  width: 100%;
+  height: 100%;
+  background-color: #64B788;
+  border-radius: 8px;
+  z-index: -1;        /* IMPORTANTE: atrás do conteúdo, mas ainda ligado ao main */
+}
+
+.decor {
+  position: absolute;
+  top: 20px;
+  left: 110px;
+  width: 5px;
+  height: 400px;
+  background-color: #64B788;
+  border-radius: 12px;
+  z-index: 1; /* atrás do main */
+}
+
+
+
+/* Imagem ocupa metade superior */
+.foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%; /* metade superior */
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 80%);
+    background-color: black;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* imagem cobre a área sem distorcer */
+}
+
+/* Títulos */
+main h1 {
+    margin-top: 52%; /* abaixo da imagem */
+    font-size: 1.6em;
+    color: #333;
+}
+
+main h3 {
+    margin-top: 5px;
+    font-weight: normal;
+    color: #666;
+}
+
+/* Ícones sociais */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: #64B788;
+    transition: 0.3s;
+}
+
+.social button:hover {
+    transform: scale(1.2);
+    color: #4b8f66;
+}
+
+/* Botões de ação (embaixo do card) */
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.acoes button {
+    background-color: #64B788;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.acoes button:hover {
+    background-color: #4b8f66;
+}
+
+section {
+    width: 900px;
+    height: 650px;
+    max-height: 740px;
+    background-color: white;
+    border-radius: 4px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 0;
+    color: #333;
+    padding: 40px;
+    overflow-y: auto;      /* barra de rolagem vertical */
+    overflow-x: hidden;    /* impede rolagem horizontal */
+    scroll-behavior: smooth; /* rolagem suave (opcional) */
+}
+
+
+
+
+section::-webkit-scrollbar {
+  width: 8px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+
+
+/* Grid principal */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px; /* espaçamento entre blocos */
+}
+
+.parent > div {
+    position: relative;
+}
+
+
+
+
+
+
+/* Título principal */
+.div1 {
+    grid-column: 1 / 6; /* ocupa todas as 5 colunas */
+}
+
+
+
+.div1 span {
+    color: #64B788;
+}
+
+/* Sobre mim - texto */
+.div2 {
+    grid-column: 1 / 4; /* ocupa 2 colunas */
+    grid-row: 2;
+    
+}
+
+.div2 p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Lista de informações */
+.div3 {
+    grid-column: 4 / 5; /* ocupa 3 colunas */
+    grid-row: 2;
+    margin-top: 15px;
+}
+
+.div3 .label {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #64B788;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.div3 .value {
+    font-size: 16px;
+    color: #333;
+    padding: 4px 8px;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 150%;
+    font-size: 14px;
+    color: #333;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+}
+
+.label {
+    white-space: nowrap;
+}
+
+.value {
+    white-space: nowrap;
+    color: #64B788;
+    font-weight: bold;
+}
+
+/* Título serviços */
+.div4 {
+    grid-column: 1 / 6;
+    grid-row: 3;
+}
+
+.div4 span {
+    color: #64B788;
+}
+
+/* Bloco de serviços */
+.div5 {
+    grid-column: 1 / 6;
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* centraliza horizontalmente */
+}
+
+.div5 i {
+    font-size: 50px;
+    color: #ffffff;
+    background-color: #64B788;
+    border-radius: 50%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* Linha horizontal abaixo da div4 (opcional) */
+.div1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;          /* na base da div4 */
+    left: 0;
+    width: 100%;        /* linha completa */
+    height: 1px;
+    background-color: #333;
+}
+
+
+/* Linha vertical entre .div2 e .div3 */
+.div2::after {
+    content: "";
+    position: absolute;
+    top: 0;             /* começa no topo da div2 */
+    right: 0;           /* encosta na borda direita da div2 */
+    width: 1px;         /* espessura da linha */
+    height: 100%;       /* altura total da div2 */
+    background-color: #333; /* cor da linha */
+}
+
+/* Linha horizontal abaixo da div4 (opcional) */
+.div4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;          /* na base da div4 */
+    left: 0;
+    width: 100%;        /* linha completa */
+    height: 1px;
+    background-color: #333;
+}
+
+        
+
+.parent1 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+/* Título ou bloco principal */
+.div6 {
+  grid-column: span 2;
+  grid-column: 1 / -1; /* ocupa todas as 6 colunas */
+  font-size: 17px; /* era font-weight, mas parece que você queria mudar o tamanho */
+  font-weight: 600;
+  position: relative;
+}
+
+.div6 span {
+  color: #64B788;
+}
+
+/* Grupos de conteúdo — simplificação */
+.div7,
+.div9,
+.div11,
+.div13 {
+  grid-column: 1 / 4; /* 3 colunas */
+  margin-top: 15px;
+  position: relative;
+}
+
+.div8,
+.div10,
+.div12,
+.div14 {
+  grid-column: 4 / 7; /* ocupa as colunas 4 e 5  */
+  margin-top: 15px;
+  position: relative;
+}
+
+
+.div7 {
+  display: flex;                /* coloca ícone e texto lado a lado */
+  align-items: center;          /* alinha verticalmente */
+  gap: 10px;                    /* espaçamento entre o ícone e o texto */
+}
+
+.div7 i {
+  font-size: 35px;              /* tamanho do ícone */
+  color: #64B788;               /* verde da tua paleta */
+}
+
+.div7 h3 {
+  font-size: 22px;
+  color: #333;
+  font-weight: 400;
+  margin: 0;                    /* remove margens padrão do h3 */
+}
+
+.div8 {
+  display: flex;                /* coloca ícone e texto lado a lado */
+  align-items: center;          /* alinha verticalmente */
+  gap: 10px;                    /* espaçamento entre o ícone e o texto */
+}
+
+.div8 i {
+  font-size: 35px;              /* tamanho do ícone */
+  color: #64B788;               /* verde da tua paleta */
+}
+
+.div8 h3 {
+  font-size: 22px;
+  color: #333;
+  font-weight: 400;
+  margin: 0;                    /* remove margens padrão do h3 */
+}
+
+
+#resumo .tempo {
+  display: inline-block;       /* permite aplicar padding e borda corretamente */
+  font-weight: 600;
+  color: #64B788;
+  background-color: #ffffff;
+  border: 2px solid #64B788;   /* cria a borda verde */
+  border-radius: 6px;          /* cantos arredondados */
+  padding: 4px 10px;           /* espaço interno */
+  margin: 8px 0;               /* espaço vertical entre elementos */
+  transition: all 0.3s ease;   /* animação suave pra hover */
+}
+
+#resumo .tempo:hover {
+  background-color: #64B788;
+  color: #ffffff;
+  cursor: none;
+}
+
+#resumo .cargo, .curso{
+  font-size: 22px;
+  font-weight: 500;
+  color: #333;
+  margin: 15px 0;
+}
+
+
+
+#resumo .empresa {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    margin: 4px 0;
+}
+
+#resumo .descricao {
+    font-size: 16px;
+    color: #555;
+    line-height: 2;
+    margin-top: 6px;
+}
+
+/* Linha horizontal abaixo do título principal (.div6) */
+
+.div6::after {
+  content: "";
+  position: absolute;
+  bottom: 0;           /* gruda na base da div6 */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333; /* cor da tua paleta */
+  opacity: 0.15;
+  border-radius: 2px;
+}
+
+/* Linha vertical central dividindo colunas esquerda/direita */
+.parent1::before {
+  content: "";
+  position: absolute;
+  top: 80px; /* deixa espaço pro título */
+  left: 50%; /* divide ao meio */
+  transform: translateX(-50%);
+  width: 1px;
+  height: calc(100% - 100px); /* ajusta altura */
+  background-color: #333;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Linhas horizontais sob cada par de blocos (pares de div7+div8, div9+div10, etc.) */
+.div7::after,
+.div8::after,
+.div9::after,
+.div10::after,
+.div11::after,
+.div12::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  opacity: 0.1;
+}
+
+.parent2 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.titulo_habilidades {
+  grid-column: span 2;
+  grid-column: 1 / -1; /* ocupa todas as 6 colunas */
+  font-size: 17px; /* era font-weight, mas parece que você queria mudar o tamanho */
+  font-weight: 600;
+  position: relative;
+}
+
+.titulo_habilidades span {
+  color: #64B788;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* necessário para o ::after funcionar */
+  padding-bottom: 5px; /* espaço pra linha */
+}
+
+/* Grupos de conteúdo — simplificação */
+.idiomas {
+  grid-column: 1 / 4; /* 3 colunas */
+  margin-top: 15px;
+  position: relative;
+}
+
+
+.desenvolvimento {
+  grid-column: 4 / 7; /* ocupa as colunas 4 e 5  */
+  margin-top: 15px;
+  position: relative;
+}
+
+.conhecimentos {
+  grid-column: 1 / 4; 
+  margin-top: 15px;
+  position: relative;
+}
+
+.conteudo_idiomas {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+
+.titulo {
+  display: flex;              /* coloca os elementos lado a lado */
+  align-items: center;        /* centraliza verticalmente */
+  gap: 10px;                  /* espaçamento entre ícone e texto */
+  margin-bottom: 25px;
+}
+
+.titulo i {
+  font-size: 30px;            /* tamanho do ícone */
+  color: #64B788;                /* cor do ícone (ajuste conforme o tema) */
+}
+
+.titulo h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;                  /* remove margem padrão do h3 */
+}
+
+
+.idioma {
+    margin-bottom: 50px;
+}
+
+.idioma p {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.nivel_idioma {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.ativo {
+    background-color: #4caf50;
+}
+
+.dot.ativo:hover {
+    transform: scale(1.15);
+}
+
+.container_linguagens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    font-family: "Poppins", sans-serif;
+    margin-top: 40px;
+}
+
+.linguagem {
+    text-align: center;
+}
+
+.circulo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(#e0e0e0 0deg, #e0e0e0 360deg);
+    position: relative;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+}
+
+/* círculo interno */
+.circulo::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* número central */
+.circulo span {
+    position: relative;
+    z-index: 1;
+}
+
+/* nome da linguagem */
+.linguagem p {
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+
+.itens {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.itens i {
+  font-size: 20px;
+  color: #64B788;
+}
+
+.itens p {
+  font-size: 16px;
+  color: #555;
+} 
+
+.titulo_habilidades::after {
+  content: "";
+  position: absolute;
+  bottom: 0;           /* gruda na base da div6 */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333; /* cor da tua paleta */
+  opacity: 0.15;
+  border-radius: 2px;
+}
+
+.titulo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;           /* gruda na base da div6 */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333; /* cor da tua paleta */
+  opacity: 0.15;
+  border-radius: 2px;
+}
+
+/* Linha vertical central dividindo colunas esquerda/direita */
+.parent2::before {
+  content: "";
+  position: absolute;
+  top: 80px; /* deixa espaço pro título */
+  left: 50%; /* divide ao meio */
+  transform: translateX(-50%);
+  width: 1px;
+  height: calc(100% - 100px); /* ajusta altura */
+  background-color: #333;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Linhas horizontais sob cada par de blocos (pares de div7+div8, div9+div10, etc.) */
+.titulo::after,
+.conteudo_idiomas::after{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  opacity: 0.1;
+}
+
+
+.trabalhos {
+  padding: 40px;
+  background-color: #fff;
+}
+
+.titulo_trabalhos h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.titulo_trabalhos h1 span {
+  color: #00b894; /* cor destaque */
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filtros button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filtros button:hover,
+.filtros button.ativo {
+  background-color: #00b894;
+  color: white;
+}
+
+.grid_trabalhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.trabalho {
+  text-align: center;
+  background-color: #fafafa;
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trabalho:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trabalho img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.trabalho h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.trabalho .tipo {
+  font-size: 14px;
+  color: #888;
+}
+
+
