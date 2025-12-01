@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
         <link rel="stylesheet" href="Styles/variables.css">
-        <link rel="stylesheet" href="Styles/style_projetos.css">
+        <link rel="stylesheet" href="Styles/style_main.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <lilAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,6 +17,10 @@
     <body>
         
         <div class="container">
+
+            
+
+
             <nav>
                 <a href="index.html"><i class="fa-solid fa-user"></i><span>SOBRE</span></a>
                 <a href="resumo.html"><i class="fa-solid fa-newspaper"></i><span>RESUMO</span></a>
@@ -51,42 +55,28 @@
             </main>
             
             <section id="sobre_mim" class="section-conteudo">
-        
-                <div id="conteudo-trabalhos" class="conteudo">
-                <div class="titulo_trabalhos">
-                    <h1><span>M</span>EUS TRABALHOS</h1>
-                </div>
-                <div class="filtros">
-                    <button class="ativo" data-filtro="todos">Todos</button>
-                    <button data-filtro="ecommerce">E-commerce</button>
-                    <button data-filtro="painel">Painel Admin</button>
-                    <button data-filtro="landing">Landing Page</button>
+                <div id="conteudo-sobre" class="conteudo ativo">
+                    <div class="parent">
+                        <div class="div1"><H1><span>SOBRE</span> MIM</H1></div>
+                        <div class="div2"><p>Sou Flaviano Bertolin, desenvolvedor front-end de Minas Gerais, Brasil. Tenho vasta experiência em desenvolvimento de websites e blogs. Gostaria muito de conversar com você sobre o nosso projeto único.</p></div>
+                        <div class="div3">
+                            <ul class="info-list">
+                                <li><span class="label">Idade . . . . . </span><span class="value">22</span></li>
+                                <li><span class="label">Residência . . . . . </span><span class="value">Brasil</span></li>
+                                <li><span class="label">Trabalho freelancer . . . . . </span><span class="value">Disponível</span></li>
+                                <li><span class="label">Endereço . . . . . </span><span class="value">Minas Gerais, Brasil</span></li>
+                            </ul>
+                        </div>
+                        <div class="div4"><H1><span>MEUS</span> SERVIÇOS</H1></div>
+                        <div class="div5">
+                            <i class="fa-solid fa-code"></i>
+                            <H3>Desenvolvimento Web</H3>
+                            <p>Site moderno e otimizado para dispositivos móveis que ajudará você a alcançar todos os seus objetivos.</p>
+                        </div></div>
+                    </div>
                 </div>
                 
                 
-                <div class="grid_trabalhos">
-                    <div class="trabalho" data-tipo="ecommerce">
-                    <a href="https://meusite.com" target="_blank">
-                        <img src="img/ecommerce1.jpg" alt="Loja Online XPTO">
-                    </a>
-                    <h3>Loja XPTO</h3>
-                    <p class="tipo">E-commerce</p>
-                    </div>
-                    <div class="trabalho" data-tipo="painel">
-                    <a href="https://paineladmin.com" target="_blank">
-                        <img src="img/painel1.jpg" alt="Painel Administrativo">
-                    </a>
-                    <h3>Dashboard Admin</h3>
-                    <p class="tipo">Painel Admin</p>
-                    </div>
-                    <div class="trabalho" data-tipo="landing">
-                    <a href="https://landingpage.com" target="_blank">
-                        <img src="img/landing1.jpg" alt="Landing Page">
-                    </a>
-                    <h3>Promo Site</h3>
-                    <p class="tipo">Landing Page</p>
-                    </div>
-
             </section>
     </div>
 <script src="script.js"></script>

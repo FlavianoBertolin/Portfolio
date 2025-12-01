@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(175, 224, 188);
+    background-color: var(--cor-fundo-body);;
     font-family: "Roboto", Arial, sans-serif;
 }
 
@@ -11,6 +11,8 @@ body {
     justify-content: center; /* centraliza horizontalmente */
     align-items: flex-start; /* alinha ao topo */
     padding: 40px;
+    background: var(--cor-fundo-body);
+    background: var(--gradiente)
 }
 
 
@@ -22,7 +24,7 @@ nav {
     width: 72px;
     height: 345px;
     border-radius: 4px;
-    background-color: #ffffff;
+    background-color: var(--cor-fundo-card);
     margin-top: 60px;
     position: relative;
     left: 6px;
@@ -32,9 +34,10 @@ nav {
     padding: 0;
     gap: 0;
     z-index: 5;
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
 }
 
-nav button {
+nav a {
     position: relative;
     display: flex;
     flex-direction: column; /* ícone em cima, texto embaixo */
@@ -43,21 +46,25 @@ nav button {
     width: 72px;
     height: 69px;
     border: none;
-    background-color: #ffffff;
+    background-color: var(--cor-fundo-card);
     cursor: pointer;
-    border-radius: 12px;
     font-size: 10px;
-    color: #000;
+    color: var(--cor_botao);
     gap: 4px; /* espaço entre ícone e texto */
 }
 
-nav button i {
+nav a:hover {
+    background-color: var(--cor-botao-hover); /* cor de fundo ao passar o mouse */
+    transition: background-color 0.1s;
+}
+
+nav a i {
     font-size: 18px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 /* linha entre os botões (meia linha à direita) */
-nav button:not(:last-child)::after {
+nav a:not(:last-child)::after {
     content: "";
     position: absolute;
     bottom: 0;       /* coloca a linha na base do botão */
@@ -68,12 +75,34 @@ nav button:not(:last-child)::after {
  /* cor da linha */
 }
 
+a {
+    text-decoration: none;
+    color: var(--cor-texto); /* sua cor preferida */
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a:hover {
+    color: var(--cor-texto-hover);
+    text-decoration: underline; /* opcional */
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
 main {
     position: relative;
     z-index: 3; /* fica acima da section */
     width: 570px;
     height: 750px;
-    background-color: white;
+    background-color: var(--cor-fundo-card);
     border-radius: 8px;
     box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
     overflow: hidden;
@@ -86,61 +115,59 @@ main {
     margin-left: 20px;
 }
 
-/* Quadrado verde decorativo atrás do main */
-main::before {
-  content: "";
-  position: absolute;
-  top: 30px;          /* posição vertical ajustável */
-  left: -60px;        /* posição horizontal ajustável */
-  width: 100%;
-  height: 100%;
-  background-color: #64B788;
-  border-radius: 8px;
-  z-index: -1;        /* IMPORTANTE: atrás do conteúdo, mas ainda ligado ao main */
-}
-
-.decor {
-  position: absolute;
-  top: 20px;
-  left: 110px;
-  width: 5px;
-  height: 400px;
-  background-color: #64B788;
-  border-radius: 12px;
-  z-index: 1; /* atrás do main */
-}
 
 
-
-/* Imagem ocupa metade superior */
 .foto {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 65%; /* metade superior */
+    max-width: 500px; /* diminui a foto */
+    height: 570px;    /* altura proporcional */
     overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 80%);
-    background-color: black;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* imagem cobre a área sem distorcer */
+    width: 260px;
+    height: auto;
+    position: relative;
+    z-index: 2; /* fica acima do shape */
+}
+
+/* --- SHAPE COM ANIMAÇÃO SUAVE --- */
+.foto::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--cor-fundo-foto);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 85%);
+    animation: shapeMove 3s ease-in-out infinite alternate;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- ANIMAÇÃO DO SHAPE --- */
+@keyframes shapeMove {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 85%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 82%);
+    }
 }
 
 /* Títulos */
 main h1 {
     margin-top: 52%; /* abaixo da imagem */
     font-size: 1.6em;
-    color: #333;
+    color: var(--cor-texto);
 }
 
 main h3 {
     margin-top: 5px;
     font-weight: normal;
-    color: #666;
+    color: var(--cor-texto-h3);
 }
 
 /* Ícones sociais */
@@ -156,13 +183,13 @@ main h3 {
     border: none;
     cursor: pointer;
     font-size: 22px;
-    color: #64B788;
+    color: var(--cor-principal);
     transition: 0.3s;
 }
 
 .social button:hover {
     transform: scale(1.2);
-    color: #4b8f66;
+    color: var(--cor-principal-hover);
 }
 
 /* Botões de ação (embaixo do card) */
@@ -174,9 +201,9 @@ main h3 {
 }
 
 .acoes button {
-    background-color: #64B788;
+    background-color: var(--cor-principal);
     border: none;
-    color: white;
+    color: var(--cor-fundo-card);
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
@@ -185,23 +212,23 @@ main h3 {
 }
 
 .acoes button:hover {
-    background-color: #4b8f66;
+    background-color: var(--cor-principal-hover);
 }
 
 section {
     width: 900px;
     height: 650px;
-    max-height: 740px;
-    background-color: white;
+    background-color: var(--cor-fundo-card);
     border-radius: 4px;
     margin-top: 20px;
     position: relative;
     z-index: 0;
-    color: #333;
+    color: var(--cor-texto);
     padding: 40px;
     overflow-y: auto;      /* barra de rolagem vertical */
     overflow-x: hidden;    /* impede rolagem horizontal */
     scroll-behavior: smooth; /* rolagem suave (opcional) */
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
 }
 
 
@@ -212,12 +239,12 @@ section::-webkit-scrollbar {
 }
 
 section::-webkit-scrollbar-thumb {
-  background-color: #888;
+  background-color: var(--cor-scrollbar);
   border-radius: 4px;
 }
 
 section::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+  background-color: var(--cor-scrollbar-hover);
 }
 
 
@@ -248,7 +275,7 @@ section::-webkit-scrollbar-thumb:hover {
 
 
 .div1 span {
-    color: #64B788;
+    color: var(--cor-principal);
 }
 
 /* Sobre mim - texto */
@@ -261,7 +288,7 @@ section::-webkit-scrollbar-thumb:hover {
 .div2 p {
     font-size: 18px;
     line-height: 1.6;
-    color: #555;
+    color: var(--cor-texto-hover);
 }
 
 /* Lista de informações */
@@ -273,15 +300,15 @@ section::-webkit-scrollbar-thumb:hover {
 
 .div3 .label {
     font-size: 16px;
-    color: #ffffff;
-    background-color: #64B788;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-principal);
     border-radius: 4px;
     padding: 4px 8px;
 }
 
 .div3 .value {
     font-size: 16px;
-    color: #333;
+    color: var(--cor-texto);
     padding: 4px 8px;
 }
 
@@ -291,7 +318,7 @@ section::-webkit-scrollbar-thumb:hover {
     margin: 0;
     width: 150%;
     font-size: 14px;
-    color: #333;
+    color: var(--cor-texto);
 }
 
 .info-list li {
@@ -306,7 +333,7 @@ section::-webkit-scrollbar-thumb:hover {
 
 .value {
     white-space: nowrap;
-    color: #64B788;
+    color: var(--cor-principal);
     font-weight: bold;
 }
 
@@ -317,7 +344,7 @@ section::-webkit-scrollbar-thumb:hover {
 }
 
 .div4 span {
-    color: #64B788;
+    color: var(--cor-principal);
 }
 
 /* Bloco de serviços */
@@ -332,8 +359,8 @@ section::-webkit-scrollbar-thumb:hover {
 
 .div5 i {
     font-size: 50px;
-    color: #ffffff;
-    background-color: #64B788;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-principal);
     border-radius: 50%;
     padding: 20px;
     margin-bottom: 10px;
@@ -348,7 +375,7 @@ section::-webkit-scrollbar-thumb:hover {
     left: 0;
     width: 100%;        /* linha completa */
     height: 1px;
-    background-color: #333;
+    background-color: var(--cor-texto);
 }
 
 
@@ -360,7 +387,7 @@ section::-webkit-scrollbar-thumb:hover {
     right: 0;           /* encosta na borda direita da div2 */
     width: 1px;         /* espessura da linha */
     height: 100%;       /* altura total da div2 */
-    background-color: #333; /* cor da linha */
+    background-color: var(--cor-texto); /* cor da linha */
 }
 
 /* Linha horizontal abaixo da div4 (opcional) */
@@ -371,7 +398,7 @@ section::-webkit-scrollbar-thumb:hover {
     left: 0;
     width: 100%;        /* linha completa */
     height: 1px;
-    background-color: #333;
+    background-color: var(--cor-texto);
 }
 
         
@@ -393,7 +420,7 @@ section::-webkit-scrollbar-thumb:hover {
 }
 
 .div6 span {
-  color: #64B788;
+  color: var(--cor-principal);
 }
 
 /* Grupos de conteúdo — simplificação */
@@ -424,12 +451,12 @@ section::-webkit-scrollbar-thumb:hover {
 
 .div7 i {
   font-size: 35px;              /* tamanho do ícone */
-  color: #64B788;               /* verde da tua paleta */
+  color: var(--cor-principal);               /* verde da tua paleta */
 }
 
 .div7 h3 {
   font-size: 22px;
-  color: #333;
+  color: var(--cor-texto);
   font-weight: 400;
   margin: 0;                    /* remove margens padrão do h3 */
 }
@@ -442,12 +469,12 @@ section::-webkit-scrollbar-thumb:hover {
 
 .div8 i {
   font-size: 35px;              /* tamanho do ícone */
-  color: #64B788;               /* verde da tua paleta */
+  color: var(--cor-principal);               /* verde da tua paleta */
 }
 
 .div8 h3 {
   font-size: 22px;
-  color: #333;
+  color: vart(--cor-texto)  ;
   font-weight: 400;
   margin: 0;                    /* remove margens padrão do h3 */
 }
@@ -456,9 +483,9 @@ section::-webkit-scrollbar-thumb:hover {
 #resumo .tempo {
   display: inline-block;       /* permite aplicar padding e borda corretamente */
   font-weight: 600;
-  color: #64B788;
-  background-color: #ffffff;
-  border: 2px solid #64B788;   /* cria a borda verde */
+  color: var(--cor-principal);
+  background-color: var(--cor-secundaria);
+  border: 2px solid var(--cor-principal);   /* cria a borda verde */
   border-radius: 6px;          /* cantos arredondados */
   padding: 4px 10px;           /* espaço interno */
   margin: 8px 0;               /* espaço vertical entre elementos */
@@ -466,15 +493,15 @@ section::-webkit-scrollbar-thumb:hover {
 }
 
 #resumo .tempo:hover {
-  background-color: #64B788;
-  color: #ffffff;
+  background-color: var(--cor-principal);
+  color: var(--cor-secundaria);
   cursor: none;
 }
 
 #resumo .cargo, .curso{
   font-size: 22px;
   font-weight: 500;
-  color: #333;
+  color: var(--cor-texto);
   margin: 15px 0;
 }
 
@@ -483,13 +510,13 @@ section::-webkit-scrollbar-thumb:hover {
 #resumo .empresa {
     font-size: 18px;
     font-weight: 400;
-    color: #666;
+    color: var(--cor-texto-h3);
     margin: 4px 0;
 }
 
 #resumo .descricao {
     font-size: 16px;
-    color: #555;
+    color: var(--cor-texto-hover);
     line-height: 2;
     margin-top: 6px;
 }
@@ -503,7 +530,7 @@ section::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #333; /* cor da tua paleta */
+  background-color: var(--cor-texto); /* cor da tua paleta */
   opacity: 0.15;
   border-radius: 2px;
 }
@@ -517,7 +544,7 @@ section::-webkit-scrollbar-thumb:hover {
   transform: translateX(-50%);
   width: 1px;
   height: calc(100% - 100px); /* ajusta altura */
-  background-color: #333;
+  background-color: var(--cor-texto);
   opacity: 0.15;
   pointer-events: none;
 }
@@ -535,7 +562,7 @@ section::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #333;
+  background-color: var(--cor-texto);
   opacity: 0.1;
 }
 
@@ -555,7 +582,7 @@ section::-webkit-scrollbar-thumb:hover {
 }
 
 .titulo_habilidades span {
-  color: #64B788;
+  color: var(--cor-principal);
 }
 
 .titulo {
@@ -591,7 +618,7 @@ section::-webkit-scrollbar-thumb:hover {
     max-width: 450px;
     margin: 20px auto;
     font-family: "Poppins", sans-serif;
-    color: #333;
+    color: var(--cor-texto);
 }
 
 
@@ -604,13 +631,13 @@ section::-webkit-scrollbar-thumb:hover {
 
 .titulo i {
   font-size: 30px;            /* tamanho do ícone */
-  color: #64B788;                /* cor do ícone (ajuste conforme o tema) */
+  color: var(--cor-principal);                /* cor do ícone (ajuste conforme o tema) */
 }
 
 .titulo h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: var(--cor-texto-h3);
   margin: 0;                  /* remove margem padrão do h3 */
 }
 
@@ -681,7 +708,7 @@ section::-webkit-scrollbar-thumb:hover {
     position: absolute;
     width: 90px;
     height: 90px;
-    background-color: #fff;
+    background-color: var(--cor-secundaria);
     border-radius: 50%;
 }
 
@@ -696,7 +723,7 @@ section::-webkit-scrollbar-thumb:hover {
     margin-top: 12px;
     font-size: 15px;
     font-weight: 500;
-    color: #333;
+    color: var(--cor-texto);
 }
 
 
@@ -708,7 +735,7 @@ section::-webkit-scrollbar-thumb:hover {
 
 .itens i {
   font-size: 20px;
-  color: #64B788;
+  color: var(--cor-principal);
 }
 
 .itens p {
@@ -723,7 +750,7 @@ section::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #333; /* cor da tua paleta */
+  background-color: var(--cor-texto); /* cor da tua paleta */
   opacity: 0.15;
   border-radius: 2px;
 }
@@ -735,7 +762,7 @@ section::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #333; /* cor da tua paleta */
+  background-color: var(--cor-texto); /* cor da tua paleta */
   opacity: 0.15;
   border-radius: 2px;
 }
@@ -749,7 +776,7 @@ section::-webkit-scrollbar-thumb:hover {
   transform: translateX(-50%);
   width: 1px;
   height: calc(100% - 100px); /* ajusta altura */
-  background-color: #333;
+  background-color: var(--cor-texto);
   opacity: 0.15;
   pointer-events: none;
 }
@@ -763,84 +790,150 @@ section::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #333;
+  background-color: var(--cor-texto);
   opacity: 0.1;
 }
 
 
-.trabalhos {
-  padding: 40px;
-  background-color: #fff;
+/* --- RESPONSIVO (TABLET) --- */
+@media (max-width: 768px) {
+    .foto {
+        width: 400px;
+        height: 300px;
+    }
+
+    .foto img {
+        width: 200px;
+    }
+
+    .foto::after {
+        animation: shapeMove 4s ease-in-out infinite alternate;
+    }
 }
 
-.titulo_trabalhos h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #333;
-}
+/* --- RESPONSIVO (CELULAR) --- */
+@media (max-width: 480px) {
+    .foto {
+        width: 400px;
+        height: 280px;
+    }
 
-.titulo_trabalhos h1 span {
-  color: #00b894; /* cor destaque */
-}
+    .foto img {
+        width: 180px;
+    }
+}        
 
-.filtros {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
-}
 
-.filtros button {
-  padding: 8px 18px;
-  border: none;
-  border-radius: 20px;
-  background-color: #eee;
-  cursor: pointer;
-  transition: 0.3s;
-}
+/* ======== RESPONSIVIDADE PARA CELULAR ======== */
+@media (max-width: 1070px) {
 
-.filtros button:hover,
-.filtros button.ativo {
-  background-color: #00b894;
-  color: white;
-}
+    /* container vira coluna */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
 
-.grid_trabalhos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
+    nav {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        left: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 12px 0;
+        gap: 10px;
+        position: sticky;
+        top: 10px; /* distância do topo */
+        z-index: 10;
+        background-color: #fafafa;
+        
+    }
 
-.trabalho {
-  text-align: center;
-  background-color: #fafafa;
-  border-radius: 12px;
-  padding: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    nav a {
+        width: 60px;
+        height: auto;
+        padding: 8px 0;
+        flex-direction: column;
+        gap: 3px;
+    }
 
-.trabalho:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+    nav a::after {
+        display: none;
+    }
 
-.trabalho img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
 
-.trabalho h3 {
-  margin-top: 10px;
-  font-size: 18px;
-  color: #333;
-}
+   /* MAIN reduzido */
+    main {
+        margin-left: 0;
+        width:500px;
+        height: 570px;
+        padding-bottom: 30px;
+    }
+    
+    /* FOTO aparece inteira */
+    .foto {
+        height: 300px;
+        clip-path: none;
+    }
 
-.trabalho .tipo {
-  font-size: 14px;
-  color: #888;
+    .foto img {
+        object-fit: contain;
+    }
+
+    /* SECTION ocupa largura total */
+    section {
+        width: 95%;
+        height: auto;
+        margin-top: 25px;
+        padding: 20px;
+        overflow: visible;
+    }
+
+
+    /* GRID 1 (sobre mim) */
+    .parent {
+        grid-template-columns: 1fr !important;
+    }
+
+    .div2::after,
+    .parent1::before {
+        display: none; /* remove linhas verticais */
+    }
+
+    .info-list {
+        width: 100%;
+    }
+
+    /* GRID 2 (experiência/cursos) */
+    .parent1 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .div7, .div8, .div9, .div10,
+    .div11, .div12, .div13, .div14 {
+        grid-column: 1 / -1 !important;
+    }
+
+    /* GRID 3 (habilidades) */
+    .parent2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .parent2::before {
+        display: none; /* remove linha vertical */
+    }
+
+    .idiomas,
+    .desenvolvimento,
+    .conhecimentos {
+        grid-column: 1 / -1 !important;
+    }
+
+
+
+
+
 }
 
 

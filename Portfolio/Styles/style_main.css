@@ -6,6 +6,8 @@ body {
     padding: 0;
     background-color: var(--cor-fundo-body);;
     font-family: "Roboto", Arial, sans-serif;
+
+
 }
 
 /* container flex */
@@ -14,6 +16,10 @@ body {
     justify-content: center; /* centraliza horizontalmente */
     align-items: flex-start; /* alinha ao topo */
     padding: 40px;
+    height: 100vh;
+    background: var(--cor-fundo-body);
+    background: var(--gradiente)
+
 }
 
 
@@ -35,9 +41,10 @@ nav {
     padding: 0;
     gap: 0;
     z-index: 5;
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
 }
 
-nav button {
+nav a {
     position: relative;
     display: flex;
     flex-direction: column; /* ícone em cima, texto embaixo */
@@ -53,18 +60,18 @@ nav button {
     gap: 4px; /* espaço entre ícone e texto */
 }
 
-nav button:hover {
+nav a:hover {
     background-color: var(--cor-botao-hover); /* cor de fundo ao passar o mouse */
     transition: background-color 0.1s;
 }
 
-nav button i {
+nav a i {
     font-size: 18px;
     padding-bottom: 5px;
 }
 
 /* linha entre os botões (meia linha à direita) */
-nav button:not(:last-child)::after {
+nav a:not(:last-child)::after {
     content: "";
     position: absolute;
     bottom: 0;       /* coloca a linha na base do botão */
@@ -90,6 +97,14 @@ a:hover {
     text-decoration: underline; /* opcional */
 }
 
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+
 main {
     position: relative;
     z-index: 3; /* fica acima da section */
@@ -102,7 +117,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* empurra o conteúdo de baixo pra cima */
+    justify-content: flex-end; 
     text-align: center;
     padding-bottom: 20px;
     margin-left: 20px;
@@ -110,23 +125,46 @@ main {
 
 
 
-/* Imagem ocupa metade superior */
 .foto {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 65%; /* metade superior */
+    max-width: 500px; /* diminui a foto */
+    height: 570px;    /* altura proporcional */
     overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 80%);
-    background-color: var(--cor-fundo-foto);
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* imagem cobre a área sem distorcer */
+    width: 260px;
+    height: auto;
+    position: relative;
+    z-index: 2; /* fica acima do shape */
 }
+
+/* --- SHAPE COM ANIMAÇÃO SUAVE --- */
+.foto::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--cor-fundo-foto);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 85%);
+    animation: shapeMove 3s ease-in-out infinite alternate;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- ANIMAÇÃO DO SHAPE --- */
+@keyframes shapeMove {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 85%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 82%);
+    }
+}
+
 
 /* Títulos */
 main h1 {
@@ -189,7 +227,6 @@ main h3 {
 section {
     width: 900px;
     height: 650px;
-    max-height: 740px;
     background-color: var(--cor-fundo-card);
     border-radius: 4px;
     margin-top: 20px;
@@ -200,6 +237,7 @@ section {
     overflow-y: auto;      /* barra de rolagem vertical */
     overflow-x: hidden;    /* impede rolagem horizontal */
     scroll-behavior: smooth; /* rolagem suave (opcional) */
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
     
 }
 
@@ -225,10 +263,12 @@ section::-webkit-scrollbar-thumb:hover {
 /* Grid principal */
 .parent {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: auto;
-    gap: 20px; /* espaçamento entre blocos */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden; /* garante que nada vaze */
 }
+
 
 .parent > div {
     position: relative;
@@ -285,12 +325,10 @@ section::-webkit-scrollbar-thumb:hover {
 }
 
 .info-list {
+    width: 100%;
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 150%;
-    font-size: 14px;
-    color: var(--cor-texto);
 }
 
 .info-list li {
@@ -298,6 +336,15 @@ section::-webkit-scrollbar-thumb:hover {
     justify-content: space-between;
     margin: 6px 0;
 }
+
+.div2 p,
+.info-list li,
+.label,
+.value {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
 
 .label {
     white-space: nowrap;
@@ -373,5 +420,141 @@ section::-webkit-scrollbar-thumb:hover {
     background-color: var(--cor-texto);
 }
 
+/* --- RESPONSIVO (TABLET) --- */
+@media (max-width: 768px) {
+    .foto {
+        width: 400px;
+        height: 300px;
+    }
+
+    .foto img {
+        width: 200px;
+    }
+
+    .foto::after {
+        animation: shapeMove 4s ease-in-out infinite alternate;
+    }
+}
+
+/* --- RESPONSIVO (CELULAR) --- */
+@media (max-width: 480px) {
+    .foto {
+        width: 400px;
+        height: 280px;
+    }
+
+    .foto img {
+        width: 180px;
+    }
+}        
+
+/* ======== RESPONSIVO: TABLET e MOBILE ======== */
+@media (max-width: 1070px) {
+
+    /* container vira coluna */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* NAV vira barra horizontal */
+    nav {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        left: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 12px 0;
+        gap: 10px;
+        position: sticky;
+        top: 10px; /* distância do topo */
+        z-index: 10;
+        background-color: #fafafa;
         
+    }
+
+    nav a {
+        width: 60px;
+        height: auto;
+        padding: 8px 0;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    /* MAIN reduzido */
+    main {
+        margin-left: 0;
+        width:500px;
+        height: 570px;
+        padding-bottom: 30px;
+    }
+
+        /* FOTO aparece inteira */
+    .foto {
+        height: 300px;
+        clip-path: none;
+    }
+
+    .foto img {
+        object-fit: contain;
+    }
+
+    /* SECTION ocupa largura total */
+    section {
+        width: 95%;
+        height: auto;
+        margin-top: 25px;
+        padding: 20px;
+        overflow: visible;
+    }
+
+    /* ===== GRID SOBRE MIM ===== */
+
+    .parent {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .div2 {
+        margin: 0px 20px;
+    }
+
+    /* remove linhas verticais do desktop */
+    .div2::after {
+        display: none;
+    }
+
+    /* Ajustes individuais */
+    .div2 p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .div3 {
+        margin: 15PX 20PX 0PX 20PX
+    }
+
+    .info-list {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .div5 {
+        align-items: center;
+        text-align: center;
+    }
+
+    .desenvolvimento .titulo {
+        margin: 0px;
+    } 
+
+}
+
 

@@ -1,105 +1,142 @@
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="style_resumo.css">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Styles/variables.css">
+    <link rel="stylesheet" href="Styles/style_resumo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
-        
-        <div class="container">
-            <nav>
-                <button data-target="sobre" ><i class="fa-solid fa-user"></i><span><a href="index.htm">SOBRE</a></span></button>
-                <button data-target="resumo" ><i class="fa-solid fa-newspaper"></i><span><a href="resumo.html">RESUMO</a></span></button>
-                <button  data-target="habilidades" ><i class="fa-solid fa-toolbox"></i><span><a href="habildiades.html">HABILIDADES</a></span></button>
-                <button  data-target="trabalhos" ><i class="fa-solid fa-briefcase"></i><span><a href="projetos.html">PROJETOS</a></span></button>
-                <button  data-target="contato" ><i class="fa-solid fa-at"></i><span><a href="contato.html">CONTATO</a></span></button>
-            </nav>
-            
-            <main>
-                <div class="foto"><img src="images/flaviano-bertolin.png" alt="flaviano-bertolin"></div>
-                <div>
-                    <h1>Flaviano Bertolin</h1>
-                    <h3>Desenvolvedor Front-End</h3>
-                </div>
-                <div class="social">
-                    <Button><i class="fa-brands fa-github"></i></Button>
-                    <Button><i class="fa-brands fa-square-linkedin"></i></Button>
-                    <Button><i class="fa-brands fa-instagram"></i></Button>
-                </div>
-                <div class="acoes">
-                    <button>DOWLOAD CV</button>
-                    <BUtton>CONTATO</BUtton>
-                </div>
-            </main>
-            
-            <section>
-                
-                
-                <div id="conteudo-resumo" class="conteudo">
-                
-                    <div class="parent1">
-                        <div class="div6"><h1><span>R</span>ESUMO</h1></div>
-                        <div class="div7">
-                            <i class="fa-solid fa-briefcase"></i>
-                            <H3>Experiência</H3>
-                        </div>
-                        <div class="div8">
-                            <i class="fa-solid fa-user-graduate"></i>
-                            <H3>Graduação</H3>
-                        </div>
-                        <div class="div9">
-                            <p class="tempo">05/05/2025 a 22/10/2025</p>
-                            <p class="cargo">Coordenador</p>
-                            <p class="empresa">MG Setel</p>
-                            <p class="descricao_trabalho">Collaborate with creative and development teams on the execution of ideas.</p>
-                        </div>
-                        <div class="div10">
-                            <p class="tempo">Cursando</p>
-                            <p class="curso">Ciências da computação</p>
-                            <p class="empresa">Anhanguera</p>
-                            <p class="descricao">Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri</p>
-                        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-user"></i><span>SOBRE</span></a>
+            <a href="resumo.html"><i class="fa-solid fa-newspaper"></i><span>RESUMO</span></a>
+            <a href="habildiades.html"><i class="fa-solid fa-toolbox"></i><span>HABILIDADES</span></a>
+            <a href="projetos.html"><i class="fa-solid fa-briefcase"></i><span>PROJETOS</span></a>
+            <a href="contato.html"><i class="fa-solid fa-at"></i><span>CONTATO</span></a>
+        </nav>
+
+        <main>
+            <div class="foto"><img src="images/flaviano-bertolin.png" alt="flaviano-bertolin"></div>
+            <div>
+                <h1>Flaviano Bertolin</h1>
+                <h3>Desenvolvedor Front-End</h3>
+            </div>
+            <div class="social">
+                <a href="https://github.com/FlavianoBertolin" target="_blank" rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-github"></i></button>
+                </a>
+
+                <a href="https://www.linkedin.com/in/flaviano-bertolin-203707234/" target="_blank"
+                    rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-square-linkedin"></i></button>
+                </a>
+
+                <a href="https://instagram.com/flaviano_bertolin" target="_blank" rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-instagram"></i></button>
+                </a>
+            </div>
+            <div class="acoes">
+                <button>DOWLOAD CV</button>
+                <Button type="button" onclick="window.location.href='contato.html'">CONTATO</Button>
+
+
+            </div>
+        </main>
+
+        <section>
+
+
+            <div id="conteudo-resumo" class="conteudo">
+
+                <div class="parent1">
+                    <div class="div6">
+                        <h1><span>R</span>ESUMO</h1>
+                    </div>
+                    <div class="div7">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <H3>Experiência</H3>
+                    </div>
+                    <div class="div8">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <H3>Graduação</H3>
+                    </div>
+                    <div class="div9">
+                        <p class="tempo">05/2025 a 10/2025</p>
+                        <p class="cargo">Coordenador</p>
+                        <p class="empresa">MG Setel</p>
+                        <p class="descricao_trabalho">
+                            <li>- Coordenação de equipes (45+ colaboradores) em prestação de
+                            serviços para CPFL.</li>
+                            <li>- Coordenação de equipes (45+ colaboradores) em prestação de
+                            serviços para CPFL.</li>
+                            <li>- Estabelecimento de cultura produtiva, recolhimento de documentos e suporte em RH.</li>
+
+                        </p>
+                    </div>
+                    <div class="div10">
+                        <p class="tempo">Cursando</p>
+                        <p class="curso">Ciências da computação</p>
+                        <p class="empresa">Anhanguera</p>
+                        <p class="descricao">Curso Bacharelado em Ciência da computação</p>
+                    </div>
+                    <div class="div11">
+                        <p class="tempo">08/2024 a 04/2025</p>
+                        <p class="cargo">Assistente Administrativo</p>
+                        <p class="empresa">MG Setel</p>
+                        <p class="descricao">
+                            <li>- Criação e conferência de controles em planilhas Excel. </li>
+                            <li>- Treinamento de novos colaboradores.</li>
+                            <li>- Análise de dados e suporte às equipes operacionais</li>
+                        </p>
+                    </div>
+                    <div class="div12">
+                        <p class="tempo">Cursando</p>
+                        <p class="curso">Administração</p>
+                        <p class="empresa">Anhanguera</p>
+                        <p class="descricao">Curso Bacharelado em Administração</p>
+                    </div>
+                    <div class="div13">
                         <div class="div11">
-                            <p class="tempo">19/08/2024 a 24/04/2025</p>
-                            <p class="cargo">Assistente Administrativo</p>
-                            <p class="empresa">MG Setel</p>
-                            <p class="descricao">Collaborate with creative and development teams on the execution of ideas.</p>
-                        </div>
-                        <div class="div12">
-                            <p class="tempo">Cursando</p>
-                            <p class="curso">Ciências da computação</p>
-                            <p class="empresa">Anhanguera</p>
-                            <p class="descricao">Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri</p>
-                        </div>
-                        <div class="div13">
-                            <div class="div11">
-                            <p class="tempo">19/08/2024 a 24/04/2025</p>
+                            <p class="tempo">03/2023 a 07/2023</p>
                             <p class="cargo">Estagio Finanças</p>
                             <p class="empresa">Liveh</p>
-                            <p class="descricao">Collaborate with creative and development teams on the execution of ideas.</p>
-                        </div>
-                        </div>
-                        <div class="div14">
-                            <p class="tempo">Cursando</p>
-                            <p class="curso">Ciências da computação</p>
-                            <p class="empresa">Anhanguera</p>
-                            <p class="descricao">Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri</p>
+                            <p class="descricao">
+                                <li>-Emissão de guias, folha de pagamento, abertura e alterações
+                                contratuais em
+                                empresas-Soluções em RH (Básicas)</li>
+                                <li>-Rotinas de DP em geral</li>
+                                <li>-Marketing e gestão de redes
+                                sociais</li></p>
                         </div>
                     </div>
-                </section>
-               
-            </section>
+                    <div class="div14">
+                        <p class="tempo">Completo</p>
+                        <p class="curso">Ciências da computação</p>
+                        <p class="empresa">Finanças</p>
+                        <p class="descricao">Técnico em Finanças - 800 Horas</p>
+                    </div>
+                </div>
+        </section>
+
+        </section>
     </div>
-<script src="script.js"></script>
-        
-    </body>
-    </html>
+    <div class="page-transition" id="transition"></div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

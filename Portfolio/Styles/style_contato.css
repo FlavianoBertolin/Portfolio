@@ -1,0 +1,642 @@
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo-body);;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+/* container flex */
+.container {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: flex-start; /* alinha ao topo */
+    padding: 40px;
+    background: var(--cor-fundo-body);
+    background: var(--gradiente)
+}
+
+
+
+/* blocos */
+
+
+nav {
+    width: 72px;
+    height: 345px;
+    border-radius: 4px;
+    background-color: var(--cor-fundo-card);
+    margin-top: 60px;
+    position: relative;
+    left: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+    z-index: 5;
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
+}
+
+nav a {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* ícone em cima, texto embaixo */
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 69px;
+    border: none;
+    background-color: var(--cor-fundo-card);
+    cursor: pointer;
+    font-size: 10px;
+    color: var(--cor_botao);
+    gap: 4px; /* espaço entre ícone e texto */
+}
+
+nav a:hover {
+    background-color: var(--cor-botao-hover); /* cor de fundo ao passar o mouse */
+    transition: background-color 0.1s;
+}
+
+nav a i {
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+/* linha entre os botões (meia linha à direita) */
+nav a:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;       /* coloca a linha na base do botão */
+    right: 0;        /* encosta na direita */
+    width: 100%;      /* metade da largura */
+    height: 1px;     /* espessura da linha */
+    background: linear-gradient(to left, #000000 -250%, transparent);
+ /* cor da linha */
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-texto); /* sua cor preferida */
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a:hover {
+    color: var(--cor-texto-hover);
+    text-decoration: underline; /* opcional */
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+
+main {
+    position: relative;
+    z-index: 3; /* fica acima da section */
+    width: 570px;
+    height: 750px;
+    background-color: var(--cor-fundo-card);
+    border-radius: 8px;
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* empurra o conteúdo de baixo pra cima */
+    text-align: center;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+
+/* Imagem ocupa metade superior */
+.foto {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* diminui a foto */
+    height: 570px;    /* altura proporcional */
+    overflow: hidden;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto img {
+    width: 260px;
+    height: auto;
+    position: relative;
+    z-index: 2; /* fica acima do shape */
+}
+
+/* --- SHAPE COM ANIMAÇÃO SUAVE --- */
+.foto::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--cor-fundo-foto);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 85%);
+    animation: shapeMove 3s ease-in-out infinite alternate;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- ANIMAÇÃO DO SHAPE --- */
+@keyframes shapeMove {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 85%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 82%);
+    }
+}
+
+
+/* Títulos */
+main h1 {
+    margin-top: 52%; /* abaixo da imagem */
+    font-size: 1.6em;
+    color: var(--cor-texto);
+}
+
+main h3 {
+    margin-top: 5px;
+    font-weight: normal;
+    color: var(--cor-texto-h3);
+}
+
+/* Ícones sociais */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--cor-principal);
+    transition: 0.3s;
+}
+
+.social button:hover {
+    transform: scale(1.2);
+    color: var(--cor-principal-hover);
+}
+
+/* Botões de ação (embaixo do card) */
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.acoes button {
+    background-color: var(--cor-principal);
+    border: none;
+    color: var(--cor-fundo-card);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.acoes button:hover {
+    background-color: var(--cor-principal-hover);
+}
+
+section {
+    width: 900px;
+    height: 650px;
+    background-color: var(--cor-fundo-card);
+    border-radius: 4px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 0;
+    color: var(--cor-texto);
+    padding: 40px;
+    overflow-y: auto;      /* barra de rolagem vertical */
+    overflow-x: hidden;    /* impede rolagem horizontal */
+    scroll-behavior: smooth; /* rolagem suave (opcional) */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.068);
+}
+
+
+
+
+section::-webkit-scrollbar {
+  width: 8px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background-color: var(--cor-scrollbar);
+  border-radius: 4px;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cor-scrollbar-hover);
+}
+
+
+/* Títulos principais */
+#contato .titulo_contato h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+#contato .titulo_contato span {
+    color: var(--cor-principal);
+}
+
+/* =============================== */
+/*     GRID DO CONTATO             */
+/* =============================== */
+
+#contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.div3 {
+    padding-right: 20px;
+    position: relative;
+}
+
+/* Linha vertical separadora */
+.div3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--cor-texto);
+    opacity: 0.15;
+}
+
+/* =============================== */
+/*  LISTA DE INFORMAÇÕES PESSOAIS */
+/* =============================== */
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.info-list .label {
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.info-list .value {
+    color: var(--cor-principal);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* =============================== */
+/*          FORMULÁRIO            */
+/* =============================== */
+
+#conteudo-contato {
+    padding-left: 20px;
+}
+
+#conteudo-contato .titulo_contato h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form_contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 15px;
+}
+
+.form_contato label {
+    font-weight: 600;
+    color: var(--cor-texto-h3);
+    margin-bottom: -5px;
+}
+
+
+
+.linha-dupla {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px; /* espaço entre Nome e Email */
+}
+
+.linha-dupla input {
+    width: 100%; /* para ficar proporcional */
+}
+
+.mensagem {
+    margin-top: 35px;
+}
+
+.campo, .mensagem {
+    position: relative;
+}
+
+.campo input,
+.mensagem textarea {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 250px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #a5a4a4;
+    background: transparent;
+    resize: none; /* opcional */
+}
+
+/* Label inicial */
+.campo label,
+.mensagem label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease;
+    pointer-events: none;
+}
+
+/* Efeito flutuante */
+.campo input:focus ~ label,
+.mensagem textarea:focus ~ label
+ {
+    top: -20px;
+    font-size: 14px;
+    color: var(--cor-principal);
+}
+
+/* Label sobe quando tiver texto */
+.campo input:not(:placeholder-shown) ~ label,
+.mensagem textarea:not(:placeholder-shown) ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: var(--cor-principal);
+}
+
+.campo input:focus,
+.mensagem textarea:focus {
+    border-bottom: 2px solid var(--cor-principal);
+}
+
+
+/* BOTÃO */
+.form_contato button {
+    margin-top: 10px;
+    background-color: var(--cor-principal);
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    color: var(--cor-fundo-card);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form_contato button:hover {
+    background-color: var(--cor-principal-hover);
+    transform: scale(1.02);
+}
+
+/* Linha abaixo do título da parte direita */
+#conteudo-contato .titulo_contato {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#conteudo-contato .titulo_contato::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--cor-texto);
+    opacity: 0.1;
+}
+
+
+/* Fundo escuro */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none; /* começa escondido */
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Caixa do modal */
+.modal-content {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    animation: aparecer 0.3s ease;
+}
+
+/* Animação */
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+#btn-fechar-modal {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: var(--cor-principal);
+    color: #000;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#btn-fechar-modal:hover {
+    background: var(--cor-principal);
+}
+
+body.modal-open {
+    filter: blur(3px);
+}
+
+
+/* --- RESPONSIVO (TABLET) --- */
+@media (max-width: 768px) {
+    .foto {
+        width: 400px;
+        height: 300px;
+    }
+
+    .foto img {
+        width: 200px;
+    }
+
+    .foto::after {
+        animation: shapeMove 4s ease-in-out infinite alternate;
+    }
+}
+
+/* --- RESPONSIVO (CELULAR) --- */
+@media (max-width: 480px) {
+    .foto {
+        width: 400px;
+        height: 280px;
+    }
+
+    .foto img {
+        width: 180px;
+    }
+}        
+
+/* ======== RESPONSIVO: TABLET e MOBILE ======== */
+@media (max-width: 1070px) {
+
+        body {
+        padding: 0 10px; /* cria espaço REAL nas laterais */
+        box-sizing: border-box;
+    }
+
+
+    /* container vira coluna */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* NAV vira barra horizontal */
+    nav {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        left: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 12px 0;
+        gap: 10px;
+        position: sticky;
+        top: 10px; /* distância do topo */
+        z-index: 10;
+        background-color: #fafafa;
+        
+    }
+
+    nav a {
+        width: 60px;
+        height: auto;
+        padding: 8px 0;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    /* MAIN reduzido */
+    main {
+        margin-left: 0;
+        width:500px;
+        height: 570px;
+        padding-bottom: 30px;
+    }
+    
+    /* FOTO aparece inteira */
+    .foto {
+        height: 300px;
+        clip-path: none;
+    }
+
+    .foto img {
+        object-fit: contain;
+    }
+
+    /* SECTION ocupa largura total */
+    section {
+        width: 95%;
+        height: auto;
+        margin-top: 25px;
+        padding: 20px;
+        overflow: visible;
+    }
+
+    /* ===== GRID SOBRE MIM ===== */
+
+    .grid,
+    .grid_trabalhos,
+    .grid_formacao,
+    .grid_experiencia,
+    .container_linguagens,
+    .itens_grid,
+    .linha-dupla,
+    .info-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100%;
+    }
+
+    /* Tira linha separadora */
+    .div3::after {
+        display: none;
+    }
+
+    /* Corrige inputs do contato */
+    .linha-dupla input {
+        width: 100%;
+    }
+
+
+
+    #nome {
+    margin-bottom: 20px;
+    }
+
+
+}

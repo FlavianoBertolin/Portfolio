@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
-        <link rel="stylesheet" href="style_habilidades.css">
+        <link rel="stylesheet" href="Styles/variables.css">
+        <link rel="stylesheet" href="Styles/style_habilidades.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,11 +18,11 @@
         
         <div class="container">
             <nav>
-                <button data-target="sobre" ><i class="fa-solid fa-user"></i><span><a href="index.htm">SOBRE</a></span></button>
-                <button data-target="resumo" ><i class="fa-solid fa-newspaper"></i><span><a href="resumo.html">RESUMO</a></span></button>
-                <button  data-target="habilidades" ><i class="fa-solid fa-toolbox"></i><span><a href="habildiades.html">HABILIDADES</a></span></button>
-                <button  data-target="trabalhos" ><i class="fa-solid fa-briefcase"></i><span><a href="projetos.html">PROJETOS</a></span></button>
-                <button  data-target="contato" ><i class="fa-solid fa-at"></i><span><a href="contato.html">CONTATO</a></span></button>
+                <a href="index.html"><i class="fa-solid fa-user"></i><span>SOBRE</span></a>
+                <a href="resumo.html"><i class="fa-solid fa-newspaper"></i><span>RESUMO</span></a>
+                <a href="habildiades.html"><i class="fa-solid fa-toolbox"></i><span>HABILIDADES</span></a>
+                <a href="projetos.html"><i class="fa-solid fa-briefcase"></i><span>PROJETOS</span></a>
+                <a href="contato.html"><i class="fa-solid fa-at"></i><span>CONTATO</span></a>
             </nav>
             
             <main>
@@ -31,13 +32,21 @@
                     <h3>Desenvolvedor Front-End</h3>
                 </div>
                 <div class="social">
-                    <Button><i class="fa-brands fa-github"></i></Button>
-                    <Button><i class="fa-brands fa-square-linkedin"></i></Button>
-                    <Button><i class="fa-brands fa-instagram"></i></Button>
+                    <a href="https://github.com/FlavianoBertolin" target="_blank" rel="noopener noreferrer">
+                        <button><i class="fa-brands fa-github"></i></button>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/flaviano-bertolin-203707234/" target="_blank" rel="noopener noreferrer">
+                        <button><i class="fa-brands fa-square-linkedin"></i></button>
+                    </a>
+
+                    <a href="https://instagram.com/flaviano_bertolin" target="_blank" rel="noopener noreferrer">
+                        <button><i class="fa-brands fa-instagram"></i></button>
+                    </a>
                 </div>
                 <div class="acoes">
                     <button>DOWLOAD CV</button>
-                    <BUtton>CONTATO</BUtton>
+                    <Button type="button" onclick="window.location.href='contato.html'">CONTATO</Button>
                 </div>
             </main>
             
@@ -144,6 +153,12 @@
                                     <span>30%</span>
                                 </div>
                                 <p>NEXT JS</p>
+                            </div>
+                             <div class="linguagem">
+                                <div class="circulo" data-porcentagem="30">
+                                    <span>40%</span>
+                                </div>
+                                <p>WORDPRESS</p>
                             </div>
                         </div>
                         </div>

@@ -1,0 +1,40 @@
+:root {
+    --cor-principal: #78CC6D;
+    --cor-principal-hover: #7b30c0; 
+    --cor-secundaria: #ffffff;
+    --cor-destaque: #ff0000;
+    --cor-fundo-body: #51A4A0;
+    --cor-fundo-card: #ffffff;
+    --cor-fundo-foto: #64c47c5e;
+    --cor-texto: #333;
+    --cor-texto-hover: #555;
+    --cor-texto-h3: #666;
+    --cor-botao:#000000;
+    --cor-botao-hover:#91ceab2c;
+    --cor-scrollbar:#888;
+    --cor-scrollbar-hover:#555;
+    --cor-text-exp:#ffffff;
+    --gradiente: linear-gradient(155deg,rgba(81, 164, 160, 1) 0%, rgba(81, 164, 160, 1) 0%, rgba(119, 203, 111, 1) 100%);
+
+}
+
+
+/*:root {
+    --cor-principal: #64B788;
+    --cor-principal-hover: #4b8f66; 
+    --cor-secundaria: #ffffff;
+    --cor-destaque: #00aaff;
+    --cor-fundo-body: #c4f5b1;
+    --cor-fundo-card: #ffffff;
+    --cor-fundo-foto: #000000;
+    --cor-texto: #333;
+    --cor-texto-hover: #555;
+    --cor-texto-h3: #666;
+    --cor-botao:#000000;
+    --cor-botao-hover:#91ceab2c;
+    --cor-scrollbar:#888;
+    --cor-scrollbar-hover:#555;
+    --cor-text-exp:#ffffff;
+    --gradiente: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(109, 87, 199, 1) 50%, rgba(55, 0, 255, 1) 100%);
+
+}

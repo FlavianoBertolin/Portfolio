@@ -1,58 +1,125 @@
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Styles/variables.css">
+    <link rel="stylesheet" href="Styles/style_contato.css">
 
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
-        
-        <div class="container">
-            <nav>
-                <button data-target="sobre" ><i class="fa-solid fa-user"></i><span><a href="index.htm">SOBRE</a></span></button>
-                <button data-target="resumo" ><i class="fa-solid fa-newspaper"></i><span><a href="resumo.html">RESUMO</a></span></button>
-                <button  data-target="habilidades" ><i class="fa-solid fa-toolbox"></i><span><a href="habildiades.html">HABILIDADES</a></span></button>
-                <button  data-target="trabalhos" ><i class="fa-solid fa-briefcase"></i><span><a href="projetos.html">PROJETOS</a></span></button>
-                <button  data-target="contato" ><i class="fa-solid fa-at"></i><span><a href="contato.html">CONTATO</a></span></button>
-            </nav>
-            
-            <main>
-                <div class="foto"><img src="images/flaviano-bertolin.png" alt="flaviano-bertolin"></div>
-                <div>
-                    <h1>Flaviano Bertolin</h1>
-                    <h3>Desenvolvedor Front-End</h3>
-                </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-user"></i><span>SOBRE</span></a>
+            <a href="resumo.html"><i class="fa-solid fa-newspaper"></i><span>RESUMO</span></a>
+            <a href="habildiades.html"><i class="fa-solid fa-toolbox"></i><span>HABILIDADES</span></a>
+            <a href="projetos.html"><i class="fa-solid fa-briefcase"></i><span>PROJETOS</span></a>
+            <a href="contato.html"><i class="fa-solid fa-at"></i><span>CONTATO</span></a>
+        </nav>
+
+        <main>
+            <div class="foto"><img src="images/flaviano-bertolin.png" alt="flaviano-bertolin"></div>
+            <div>
+                <h1>Flaviano Bertolin</h1>
+                <h3>Desenvolvedor Front-End</h3>
+            </div>
                 <div class="social">
-                    <Button><i class="fa-brands fa-github"></i></Button>
-                    <Button><i class="fa-brands fa-square-linkedin"></i></Button>
-                    <Button><i class="fa-brands fa-instagram"></i></Button>
+                    <a href="https://github.com/FlavianoBertolin" target="_blank" rel="noopener noreferrer">
+                        <button><i class="fa-brands fa-github"></i></button>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/flaviano-bertolin-203707234/" target="_blank" rel="noopener noreferrer">
+                        <button><i class="fa-brands fa-square-linkedin"></i></button>
+                    </a>
+
+                    <a href="https://instagram.com/flaviano_bertolin" target="_blank" rel="noopener noreferrer">
+                        <button><i class="fa-brands fa-instagram"></i></button>
+                    </a>
                 </div>
-                <div class="acoes">
-                    <button>DOWLOAD CV</button>
-                    <BUtton>CONTATO</BUtton>
+            <div class="acoes">
+                <button type="button">DOWLOAD CV</button>
+                <Button type="button" onclick="window.location.href='contato.html'">CONTATO</Button>
+            </div>
+        </main>
+
+        <section id="contato" class="contato">
+
+            <div class="titulo_contato">
+                <h1><span>Entre</span> em contato</h1>
+            </div>
+
+            <div class="div3">
+                <ul class="info-list">
+                    <li><span class="label">Localização . . . . . </span><span class="value">Minas Gerais, BR</span>
+                    </li>
+                    <li><span class="label">E-mail . . . . . </span><span
+                            class="value">flavianobertolin@gmail.com</span></li>
+                    <li><span class="label">Telefone . . . . . </span><span class="value">+55 (32) 99957-3786</span>
+                    </li>
+                    <li><span class="label">Freelance . . . . . </span><span class="value">Disponivel</span></li>
+                </ul>
+            </div>
+            <div id="conteudo-contato" class="conteudo">
+                <div class="titulo_contato">
+                    <h1><span>Formulário</span> de contato</h1>
                 </div>
-            </main>
-            
-            <section id="sobre_mim" class="section-conteudo">
-                
-                
+
+                <form id="meu_form" class="form_contato" action="https://formsubmit.co/flavianobertolin@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nova mensagem pelo Portfolio!">
+                <input type="hidden" name="_template" value="box">
+                <input type="hidden" name="_autoresponse" value="Recebi sua mensagem! Já retorno :)">
+
+                    
+                    <div class="linha-dupla">
+                        <div class="campo">
+                            <input placeholder="" type="text" id="nome" name="nome" autocomplete="on" required>
+                            <label for="nome">Nome e Sobrenome</label>
                         </div>
-                        <!---
-                        <section id="contato" class="conteudo hide" >
+
+                        <div class="campo">
+                            <input placeholder="" type="email" id="email" name="email"  autocomplete="on" required>
+                            <label for="email">E-mail</label>
+                        </div>
+                    </div>
+
+                    
+                    <div class="mensagem">
+                        <textarea placeholder="" name="assunto" id="assunto" textarea rows="4" minlength="10" wrap="hard" autocomplete="on" required></textarea>
+                        <label for="mensagem">Mensagem</label>
+                    </div>
+
+                    <!-- Botão -->
+                    <button type="submit">ENVIAR</button>
+                </form>
                 
-                        </section>
-                --->
-            </section>
+            </div>
+
+        </section>
+        <div id="modal-sucesso" class="modal">
+                    <div class="modal-content">
+                        <h2>Mensagem enviada!</h2>
+                        <p>Obrigado por entrar em contato. Retornarei em breve.</p>
+                        <button id="btn-fechar-modal">OK</button>
+                    </div>
+                </div>
     </div>
-<script src="script.js"></script>
-        
-    </body>
-    </html>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
