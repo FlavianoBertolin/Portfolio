@@ -1,60 +1,83 @@
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="Styles/variables.css">
-        <link rel="stylesheet" href="Styles/style_projetos.css">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Styles/variables.css">
+    <link rel="stylesheet" href="Styles/main_card.css">
+    <link rel="stylesheet" href="Styles/style_projetos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
-        
-        <div class="container">
-            <nav>
-                <a href="index.html"><i class="fa-solid fa-user"></i><span>SOBRE</span></a>
-                <a href="resumo.html"><i class="fa-solid fa-newspaper"></i><span>RESUMO</span></a>
-                <a href="habildiades.html"><i class="fa-solid fa-toolbox"></i><span>HABILIDADES</span></a>
-                <a href="projetos.html"><i class="fa-solid fa-briefcase"></i><span>PROJETOS</span></a>
-                <a href="contato.html"><i class="fa-solid fa-at"></i><span>CONTATO</span></a>
-            </nav>
-            
-            <main>
-                <div class="foto"><img src="images/flaviano-bertolin.png" alt="flaviano-bertolin"></div>
-                <div>
-                    <h1>Flaviano Bertolin</h1>
-                    <h3>Desenvolvedor Front-End</h3>
-                </div>
-                <div class="social">
-                    <a href="https://github.com/FlavianoBertolin" target="_blank" rel="noopener noreferrer">
-                        <button><i class="fa-brands fa-github"></i></button>
-                    </a>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-                    <a href="https://www.linkedin.com/in/flaviano-bertolin-203707234/" target="_blank" rel="noopener noreferrer">
-                        <button><i class="fa-brands fa-square-linkedin"></i></button>
-                    </a>
+<body class="bg-ultra">
+    <div class="particles">
+        <span style="left:5%; animation-duration:12s;"></span>
+        <span style="left:15%; animation-duration:9s;"></span>
+        <span style="left:25%; animation-duration:14s;"></span>
+        <span style="left:35%; animation-duration:10s;"></span>
+        <span style="left:45%; animation-duration:13s;"></span>
+        <span style="left:55%; animation-duration:11s;"></span>
+        <span style="left:65%; animation-duration:16s;"></span>
+        <span style="left:75%; animation-duration:8s;"></span>
+        <span style="left:85%; animation-duration:15s;"></span>
+        <span style="left:95%; animation-duration:12s;"></span>
+    </div>
 
-                    <a href="https://instagram.com/flaviano_bertolin" target="_blank" rel="noopener noreferrer">
-                        <button><i class="fa-brands fa-instagram"></i></button>
-                    </a>
-                </div>
-                <div class="acoes">
-                    <button>DOWLOAD CV</button>
-                    <Button type="button" onclick="window.location.href='contato.html'">CONTATO</Button>
-                </div>
-            </main>
-            
-            <section id="sobre_mim" class="section-conteudo">
-        
-                <div id="conteudo-trabalhos" class="conteudo">
+    <!-- ONDAS ORGÂNICAS ESTILO APPLE -->
+    <div class="waves"></div>
+
+
+    <div class="container">
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-user"></i><span>SOBRE</span></a>
+            <a href="resumo.html"><i class="fa-solid fa-newspaper"></i><span>RESUMO</span></a>
+            <a href="habildiades.html"><i class="fa-solid fa-toolbox"></i><span>HABILIDADES</span></a>
+            <a class="selected_window"  href="projetos.html"><i class="fa-solid fa-briefcase"></i><span>PROJETOS</span></a>
+            <a href="contato.html"><i class="fa-solid fa-at"></i><span>CONTATO</span></a>
+        </nav>
+
+        <main>
+            <div class="foto"><img src="images/flaviano-bertolin.png" alt="flaviano-bertolin"></div>
+            <div>
+                <h1>Flaviano Bertolin</h1>
+                <h3>Desenvolvedor Front-End</h3>
+            </div>
+            <div class="social">
+                <a href="https://github.com/FlavianoBertolin" target="_blank" rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-github"></i></button>
+                </a>
+
+                <a href="https://www.linkedin.com/in/flaviano-bertolin-203707234/" target="_blank"
+                    rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-square-linkedin"></i></button>
+                </a>
+
+                <a href="https://instagram.com/flaviano_bertolin" target="_blank" rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-instagram"></i></button>
+                </a>
+            </div>
+            <div class="acoes">
+                <button>DOWLOAD CV</button>
+                <Button type="button" onclick="window.location.href='contato.html'">CONTATO</Button>
+            </div>
+        </main>
+
+        <section id="sobre_mim" class="section-conteudo">
+
+            <div id="conteudo-trabalhos" class="conteudo">
                 <div class="titulo_trabalhos">
-                    <h1><span>M</span>EUS TRABALHOS</h1>
+                    <h1><span>Meus</span> trabalhos</h1>
                 </div>
                 <div class="filtros">
                     <button class="ativo" data-filtro="todos">Todos</button>
@@ -62,34 +85,35 @@
                     <button data-filtro="painel">Painel Admin</button>
                     <button data-filtro="landing">Landing Page</button>
                 </div>
-                
-                
+
+
                 <div class="grid_trabalhos">
                     <div class="trabalho" data-tipo="ecommerce">
-                    <a href="https://meusite.com" target="_blank">
-                        <img src="img/ecommerce1.jpg" alt="Loja Online XPTO">
-                    </a>
-                    <h3>Loja XPTO</h3>
-                    <p class="tipo">E-commerce</p>
+                        <a href="https://meusite.com" target="_blank">
+                            <img src="img/ecommerce1.jpg" alt="Loja Online XPTO">
+                        </a>
+                        <h3>Loja XPTO</h3>
+                        <p class="tipo">E-commerce</p>
                     </div>
                     <div class="trabalho" data-tipo="painel">
-                    <a href="https://paineladmin.com" target="_blank">
-                        <img src="img/painel1.jpg" alt="Painel Administrativo">
-                    </a>
-                    <h3>Dashboard Admin</h3>
-                    <p class="tipo">Painel Admin</p>
+                        <a href="https://paineladmin.com" target="_blank">
+                            <img src="img/painel1.jpg" alt="Painel Administrativo">
+                        </a>
+                        <h3>Dashboard Admin</h3>
+                        <p class="tipo">Painel Admin</p>
                     </div>
                     <div class="trabalho" data-tipo="landing">
-                    <a href="https://landingpage.com" target="_blank">
-                        <img src="img/landing1.jpg" alt="Landing Page">
-                    </a>
-                    <h3>Promo Site</h3>
-                    <p class="tipo">Landing Page</p>
+                        <a href="https://landingpage.com" target="_blank">
+                            <img src="img/landing1.jpg" alt="Landing Page">
+                        </a>
+                        <h3>Promo Site</h3>
+                        <p class="tipo">Landing Page</p>
                     </div>
 
-            </section>
+        </section>
     </div>
-<script src="script.js"></script>
-        
-    </body>
-    </html>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

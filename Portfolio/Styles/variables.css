@@ -1,6 +1,6 @@
 :root {
     --cor-principal: #78CC6D;
-    --cor-principal-hover: #7b30c0; 
+    --cor-principal-hover: #51A4A0; 
     --cor-secundaria: #ffffff;
     --cor-destaque: #ff0000;
     --cor-fundo-body: #51A4A0;
@@ -10,12 +10,16 @@
     --cor-texto-hover: #555;
     --cor-texto-h3: #666;
     --cor-botao:#000000;
-    --cor-botao-hover:#91ceab2c;
+    --cor-botao-hover:#51A4A0;
     --cor-scrollbar:#888;
     --cor-scrollbar-hover:#555;
     --cor-text-exp:#ffffff;
+    --cor-nav-hover:#ffffff;
     --gradiente: linear-gradient(155deg,rgba(81, 164, 160, 1) 0%, rgba(81, 164, 160, 1) 0%, rgba(119, 203, 111, 1) 100%);
-
+    --gradiente-animado: linear-gradient(155deg,
+        rgba(81, 164, 160, 1) 0%,
+        rgba(81, 164, 160, 1) 0%,
+        rgba(119, 203, 111, 1) 100%);
 }
 
 
@@ -37,4 +41,51 @@
     --cor-text-exp:#ffffff;
     --gradiente: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(109, 87, 199, 1) 50%, rgba(55, 0, 255, 1) 100%);
 
+}
+
+
+
+Gradiente alternativo animado 
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo-body);;
+    font-family: "Roboto", Arial, sans-serif;
+    height: 100vh;
+ GRADIENTE PROFISSIONAL — PALETA EVOLUÍDA 
+    background: linear-gradient(
+        135deg,
+        #4db6ac 0%,     /* Turquesa suave 
+        #3fa69b 20%,    /* Verde petróleo suave 
+        #56d27a 55%,    /* Verde esmeralda vibrante 
+        #2b8ea0 100%    /* Azul petróleo 
+    );
+
+    background-size: 300% 300%;
+    animation:
+        movimentoProfundo 8s ease-in-out infinite,
+        pulsoRadiante 5s ease-in-out infinite,
+        brilhoSuave 9s ease-in-out infinite;
+}
+
+/* Movimento mais forte e cinematográfico 
+@keyframes movimentoProfundo {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Pulso perceptível nas cores, sem mover elementos 
+@keyframes pulsoRadiante {
+    0%   { filter: brightness(1) saturate(1); }
+    50%  { filter: brightness(1.25) saturate(1.3); }
+    100% { filter: brightness(1) saturate(1); }
+}
+
+/* Micro-brilho flutuante (efeito premium sutil) 
+@keyframes brilhoSuave {
+    0%   { filter: hue-rotate(0deg); }
+    50%  { filter: hue-rotate(8deg); }
+    100% { filter: hue-rotate(0deg); }
 }

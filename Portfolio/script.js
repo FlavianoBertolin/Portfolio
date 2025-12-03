@@ -23,46 +23,52 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-  // ==== FORMULÁRIO DE CONTATO COM MODAL DE SUCESSO ====
- document.getElementById("meu_form").addEventListener("submit", async (e) => {
-    e.preventDefault(); // Impede o formulário de recarregar a página
+// ==== FORMULÁRIO DE CONTATO COM MODAL DE SUCESSO ====
+document.getElementById("meu_form").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
     const form = e.target;
     const dados = new FormData(form);
 
-    // Envia os dados via POST para o FormSubmit
     await fetch(form.action, {
         method: "POST",
         body: dados
     });
 
-    // Mostra o modal
     document.getElementById("modal-sucesso").style.display = "flex";
 
-    // Limpa os campos do formulário
     form.reset();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// ===== FECHAR O MODAL =====
+document.getElementById("btn-fechar-modal").addEventListener("click", () => {
+    document.getElementById("modal-sucesso").style.display = "none";
+});
 
+// Fechar clicando fora da caixa
+document.getElementById("modal-sucesso").addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+        e.currentTarget.style.display = "none";
+    }
+});
+
+
+// ==== TRANSIÇÃO (SEU CÓDIGO ORIGINAL) ====
+document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("btn-transition");
 
     if (btn) {
         btn.addEventListener("click", function (e) {
-            e.preventDefault(); // impede o link de trocar a página
+            e.preventDefault();
 
             const transition = document.getElementById("transition");
-
-            // ativa a animação
             transition.classList.add("active");
 
-            // espera a animação terminar e troca a página
             setTimeout(() => {
                 window.location.href = this.href;
-            }, 500); // tempo precisa bater com o CSS
+            }, 500);
         });
     }
 });
-
 
 });

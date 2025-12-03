@@ -1,66 +1,91 @@
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="Styles/variables.css">
-        <link rel="stylesheet" href="Styles/style_habilidades.css">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Styles/variables.css">
+    <link rel="stylesheet" href="Styles/main_card.css">
+    <link rel="stylesheet" href="Styles/style_habilidades.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <lAccordionink href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
-        
-        <div class="container">
-            <nav>
-                <a href="index.html"><i class="fa-solid fa-user"></i><span>SOBRE</span></a>
-                <a href="resumo.html"><i class="fa-solid fa-newspaper"></i><span>RESUMO</span></a>
-                <a href="habildiades.html"><i class="fa-solid fa-toolbox"></i><span>HABILIDADES</span></a>
-                <a href="projetos.html"><i class="fa-solid fa-briefcase"></i><span>PROJETOS</span></a>
-                <a href="contato.html"><i class="fa-solid fa-at"></i><span>CONTATO</span></a>
-            </nav>
-            
-            <main>
-                <div class="foto"><img src="images/flaviano-bertolin.png" alt="flaviano-bertolin"></div>
-                <div>
-                    <h1>Flaviano Bertolin</h1>
-                    <h3>Desenvolvedor Front-End</h3>
-                </div>
-                <div class="social">
-                    <a href="https://github.com/FlavianoBertolin" target="_blank" rel="noopener noreferrer">
-                        <button><i class="fa-brands fa-github"></i></button>
-                    </a>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-                    <a href="https://www.linkedin.com/in/flaviano-bertolin-203707234/" target="_blank" rel="noopener noreferrer">
-                        <button><i class="fa-brands fa-square-linkedin"></i></button>
-                    </a>
+<body class="bg-ultra">
+    <div class="particles">
+        <span style="left:5%; animation-duration:12s;"></span>
+        <span style="left:15%; animation-duration:9s;"></span>
+        <span style="left:25%; animation-duration:14s;"></span>
+        <span style="left:35%; animation-duration:10s;"></span>
+        <span style="left:45%; animation-duration:13s;"></span>
+        <span style="left:55%; animation-duration:11s;"></span>
+        <span style="left:65%; animation-duration:16s;"></span>
+        <span style="left:75%; animation-duration:8s;"></span>
+        <span style="left:85%; animation-duration:15s;"></span>
+        <span style="left:95%; animation-duration:12s;"></span>
+    </div>
 
-                    <a href="https://instagram.com/flaviano_bertolin" target="_blank" rel="noopener noreferrer">
-                        <button><i class="fa-brands fa-instagram"></i></button>
-                    </a>
-                </div>
-                <div class="acoes">
-                    <button>DOWLOAD CV</button>
-                    <Button type="button" onclick="window.location.href='contato.html'">CONTATO</Button>
-                </div>
-            </main>
-            
-            <section id="sobre_mim" class="section-conteudo">
-                
-                <div id="conteudo-habilidades" class="conteudo">
-                    <div class="parent2">
-                        <div class="titulo_habilidades"><h1><span>M</span>INHAS HABILIDADES</h1></div>
-                        <div class="idiomas">
-                            <div class="titulo">
-                                <i class="fa-solid fa-flag"></i>
-                                <H3>IDIOMAS</H3>
-                            </div>
-                            <div class="conteudo_idiomas">
+    <!-- ONDAS ORGÂNICAS ESTILO APPLE -->
+    <div class="waves"></div>
+
+
+    <div class="container">
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-user"></i><span>SOBRE</span></a>
+            <a href="resumo.html"><i class="fa-solid fa-newspaper"></i><span>RESUMO</span></a>
+            <a class="selected_window"  href="habildiades.html"><i class="fa-solid fa-toolbox"></i><span>HABILIDADES</span></a>
+            <a href="projetos.html"><i class="fa-solid fa-briefcase"></i><span>PROJETOS</span></a>
+            <a href="contato.html"><i class="fa-solid fa-at"></i><span>CONTATO</span></a>
+        </nav>
+
+        <main>
+            <div class="foto"><img src="images/flaviano-bertolin.png" alt="flaviano-bertolin"></div>
+            <div>
+                <h1>Flaviano Bertolin</h1>
+                <h3>Desenvolvedor Front-End</h3>
+            </div>
+            <div class="social">
+                <a href="https://github.com/FlavianoBertolin" target="_blank" rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-github"></i></button>
+                </a>
+
+                <a href="https://www.linkedin.com/in/flaviano-bertolin-203707234/" target="_blank"
+                    rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-square-linkedin"></i></button>
+                </a>
+
+                <a href="https://instagram.com/flaviano_bertolin" target="_blank" rel="noopener noreferrer">
+                    <button><i class="fa-brands fa-instagram"></i></button>
+                </a>
+            </div>
+            <div class="acoes">
+                <button>DOWLOAD CV</button>
+                <Button type="button" onclick="window.location.href='contato.html'">CONTATO</Button>
+            </div>
+        </main>
+
+        <section id="sobre_mim" class="section-conteudo">
+
+            <div id="conteudo-habilidades" class="conteudo">
+                <div class="parent2">
+                    <div class="titulo_habilidades">
+                        <h1><span>Minhas</span>  habilidades</h1>
+                    </div>
+                    <div class="idiomas">
+                        <div class="titulo">
+                            <i class="fa-solid fa-flag"></i>
+                            <H3>IDIOMAS</H3>
+                        </div>
+                        <div class="conteudo_idiomas">
                             <div class="idioma">
                                 <p>Português - Nativo</p>
                                 <div class="nivel_idioma">
@@ -107,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="idioma">
-                            <p>Jâpones - Básico </p>
+                                <p>Jâpones - Básico </p>
                                 <div class="nivel_idioma">
                                     <span class="dot ativo"></span>
                                     <span class="dot ativo"></span>
@@ -122,14 +147,14 @@
                                 </div>
                             </div>
                         </div>
-                
+
+                    </div>
+                    <div class="desenvolvimento">
+                        <div class="titulo">
+                            <i class="fa-solid fa-code"></i>
+                            <H3>DESENVOLVIMENTO</H3>
                         </div>
-                        <div class="desenvolvimento">
-                           <div class="titulo">
-                               <i class="fa-solid fa-code"></i>
-                                <H3>DESENVOLVIMENTO</H3>
-                           </div>
-                           <div class="container_linguagens">
+                        <div class="container_linguagens">
                             <div class="linguagem">
                                 <div class="circulo" data-porcentagem="90">
                                     <span>90%</span>
@@ -154,42 +179,43 @@
                                 </div>
                                 <p>NEXT JS</p>
                             </div>
-                             <div class="linguagem">
+                            <div class="linguagem">
                                 <div class="circulo" data-porcentagem="30">
                                     <span>40%</span>
                                 </div>
                                 <p>WORDPRESS</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="conhecimentos">
+                        <div class="titulo">
+                            <i class="fa-solid fa-list"></i>
+                            <H3>CONHECIMENTOS</H3>
                         </div>
-                        <div class="conhecimentos">
-                            <div class="titulo">
-                                <i class="fa-solid fa-list"></i>
-                                <H3>CONHECIMENTOS</H3>
-                            </div>
-                            <div class="itens">
-                                <i class="fa-solid fa-check"></i>
-                                <p>Desenvolvimento moderno e responsivo</p>
-                            </div>
-                            <div class="itens">
-                                <i class="fa-solid fa-check"></i>
-                                <p>Otimização para mecanismos de busca (SEO)</p>
-                            </div>
-                            <div class="itens">
-                                <i class="fa-solid fa-check"></i>
-                                <p>Design centrado no usuário (UX/UI)</p>
-                            </div>
-                            <div class="itens">
-                                <i class="fa-solid fa-check"></i>
-                                <p>Desenvolvimento de Landing Pages, E-commerces e painéis administrativos</p>
-                            </div>
-                
+                        <div class="itens">
+                            <i class="fa-solid fa-check"></i>
+                            <p>Desenvolvimento moderno e responsivo</p>
                         </div>
-                 </div>
+                        <div class="itens">
+                            <i class="fa-solid fa-check"></i>
+                            <p>Otimização para mecanismos de busca (SEO)</p>
+                        </div>
+                        <div class="itens">
+                            <i class="fa-solid fa-check"></i>
+                            <p>Design centrado no usuário (UX/UI)</p>
+                        </div>
+                        <div class="itens">
+                            <i class="fa-solid fa-check"></i>
+                            <p>Desenvolvimento de Landing Pages, E-commerces e painéis administrativos</p>
+                        </div>
+
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
     </div>
-<script src="script.js"></script>
-        
-    </body>
-    </html>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
