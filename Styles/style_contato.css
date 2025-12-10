@@ -285,7 +285,7 @@ body.modal-open {
 }
 
 @media (max-width: 480px) {
-    .div3 .value, .div3 .label {
+    .value,  .label {
         font-size: 10px;
     }
 }
