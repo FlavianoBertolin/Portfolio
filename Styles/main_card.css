@@ -478,7 +478,7 @@ h1{
 
     ::-webkit-scrollbar {
     width: 0;
-}
+    }
 
     /* container vira coluna */
     .container {
@@ -511,10 +511,22 @@ h1{
         padding: 8px 0;
         flex-direction: column;
         gap: 3px;
+        background-color: #fafafa;
+    }
+
+    .selected_window{
+        background-color: #fafafa;
+        color: var(--cor-botao-hover);
     }
 
     nav a::after {
         display: none;
+    }
+        nav a:hover {
+        background-color: #fafafa;
+        /* cor de fundo ao passar o mouse */
+        transition: background-color 0.1s;
+        color: var(--cor-botao-hover);
     }
 
     /* MAIN reduzido */
@@ -523,6 +535,7 @@ h1{
         width: 500px;
         height: 570px;
         padding-bottom: 30px;
+        max-width: 100%;
     }
 
     /* FOTO aparece inteira */
@@ -541,7 +554,8 @@ h1{
         height: auto;
         margin-top: 25px;
         padding: 20px;
-        overflow: visible;
+ 
     }
 
 }
+

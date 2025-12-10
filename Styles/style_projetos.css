@@ -79,8 +79,17 @@
 
 @media (max-width: 1070px) {
 
-    /* ===== GRID SOBRE MIM ===== */
+    .filtros {
+     gap: 8px; /* diminui o espaçamento */
+      flex-wrap: wrap; /* permite quebrar linha se ficar apertado */
+    }
 
+    .filtros button {
+      padding: 6px 12px; /* diminui o tamanho dos botões */
+      font-size: 12px; /* diminui o texto */
+     border-radius: 15px;
+   }
+   
     .grid_trabalhos {
         display: grid;
         grid-template-columns: 1fr !important; /* força 1 coluna */
@@ -93,3 +102,5 @@
     }
 
 }
+
+

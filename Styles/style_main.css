@@ -206,3 +206,10 @@
     }
 
 }
+
+
+@media (max-width: 480px) {
+    .div3 .value, .div3 .label {
+        font-size: 10px;
+    }
+}
